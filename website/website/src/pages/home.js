@@ -6,9 +6,10 @@ export default function Home() {
   const buttonNav = useNavigate();
   return(
     <div>
+      <h1>Home Page</h1>
       <NavBar/>
       <>
-        <h2>Home Page</h2>
+        
         <p1>This will be our landing page. #WeWillPrevail</p1>
         <button onClick = {()=> buttonNav("/info")}>More About Heart Disease</button>
         <button onClick = {()=> buttonNav("/stats")}>
