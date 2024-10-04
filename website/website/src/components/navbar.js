@@ -6,12 +6,11 @@ const NavBar = () => {
   const buttonNav = useNavigate();
   return (
     <header className="header">
-
         <nav className="navbar">
             <a href="/home">Home</a>
             <a href="/model">Model</a>
-            <a href="/about">About</a>
-            <button onClick = {()=> buttonNav("/quizentry")}>Quiz</button>
+            <a href="/about">About Us</a>
+            <button className ='b' onClick = {()=> buttonNav("/quizentry")}>Quiz</button>
         </nav>
     </header> 
   )
