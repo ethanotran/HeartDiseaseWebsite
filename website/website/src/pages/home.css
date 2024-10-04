@@ -3,11 +3,13 @@
   font-size: 27px;
   font-weight: 500;
   width: 500px;
-  background-color: rgb(24, 23, 23);
+  background-color: rgb(255, 255, 255);
   opacity: 0.3;
 }
 
 .header-box {
+  
+  font-family: "Arial";
   background-color: rgb(17, 17, 17);
   color: white;
   text-align: center;
@@ -16,53 +18,96 @@
   height: 300px;
 }
 
-.header-box .quiz-button{
-  background-color: rgb(255, 100, 100);
+.header-box .title {
+  font-size: 25px;
+  font-family: "Arial";
   color: white;
+  text-align: center;
+  transform: translateY(-120px);
+  
+ 
+}
+
+
+.header-box .body {
+  font-size: 25px;
+  font-family: "Arial";
+  color: rgb(85, 84, 84);
+  text-align: center;
+  transform: translateY(-100px);
+  margin: 32px;
+}
+.header-box .quiz-button{
+  
+
+  font-size: 20px;
+  background-color: rgb(255, 100, 100);
+  color: rgb(253, 253, 253);
   text-align: center;
   border-radius: 10%;
   align-items: center;
-  height: 40px;
-  width: 100px;
+  height: 65px;
+  width: 150px;
+  transform: translateY(-105px);
+  
+ 
+  
 }
 
 .heart-disease {
+  font-family: "Arial";
   column-count: 2;
   font-size: larger;
-  font: arial;
 }
 
 .heartdisease .h2 {
   text-transform: capitalize;
-  color: red;
+  color: rgb(0, 0, 0);
 }
-
+.heartdisease .p2 {
+ font-size: large;
+  
+}
 .heart-disease .more {
+ transform: translateY(30px);
+ font-size: large;
  background-color: black;
  color: white;
  border-radius: 10%;
+ height: 40px;
+ width: 100px;
 }
 
 .statistics {
+  font-family: "Arial";
   column-count: 2;
   font-size: larger;
 }
 
 .statistics .more {
-  background-color: black;
-  color: white;
-  border-radius: 10%;
+ transform: translateY(30px);
+ font-size: large;
+ background-color: black;
+ color: white;
+ border-radius: 10%;
+ height: 40px;
+ width: 100px;
 }
 
 .model {
+  font-family: "Arial";
   column-count: 2;
   font-size: larger;
 }
 
 .model .more {
-  background-color: black;
-  color: white;
-  border-radius: 10%;
+ transform: translateY(30px);
+ font-size: large;
+ background-color: black;
+ color: white;
+ border-radius: 10%;
+ height: 40px;
+ width: 100px;
 }
 
 body {
