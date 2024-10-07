@@ -1,9 +1,19 @@
 import NavBar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
+import { useState,useEffect } from 'react'
+import axios from "axios"
 import "./home.css"
 
 export default function Home() {
   const buttonNav = useNavigate();
+
+  const fetchAPI = async () =>{
+    const response = await axios.get("http://localhost:8090/api/values");
+    console.log(response.data.values);
+  };
+  useEffect(() =>{
+    fetchAPI()
+  },[])
   return(
     <div>
       <NavBar/>

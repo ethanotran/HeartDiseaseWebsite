@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState,useEffect } from 'react'
+import axios from "axios"
 import Home from './pages/home'
 import About from './pages/about'
 import Model from './pages/model'
@@ -10,6 +12,8 @@ import Quiz from './pages/quiz'
 
 
 export default function App() {
+
+ 
   return (
     <div>
         <BrowserRouter>
