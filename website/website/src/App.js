@@ -6,6 +6,7 @@ import Info from './pages/info'
 import Stats from './pages/stats'
 import Error from './pages/error'
 import QuizEntry from './pages/quizentry'
+import Quiz from './pages/quiz'
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
               <Route path="/Stats" element={<Stats/>}></Route>
               <Route path="/Info" element={<Info/>}></Route>
               <Route path="/QuizEntry" element={<QuizEntry/>}></Route>
+              <Route path="/QuizEntry/Quiz" element={<Quiz/>}></Route>
               <Route path="*" element={<Error/>}></Route>
           </Routes>
         

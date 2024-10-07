@@ -1,14 +1,14 @@
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
-  left: 0;
   width: 100%;
   padding: 20px 10%;
   background: white;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: right;
+  align-items: right;
   z-index: 100;
+  float:right;
 }
 
 .logo {
@@ -24,4 +24,15 @@
   font-weight: 500;
   margin-left: 40px;
   font: optional;
+}
+
+.b {
+  position: relative;
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  font-weight: 500;
+  margin-left: 40px;
+  font: optional;
+  border-radius: 5px;
 }
