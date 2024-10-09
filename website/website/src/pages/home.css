@@ -10,7 +10,7 @@
 .header-box {
   
   font-family: "Arial";
-  background-color: rgb(17, 17, 17);
+  background-color: rgb(29, 29, 29);
   color: white;
   text-align: center;
   padding-top: 15%;
@@ -32,7 +32,7 @@
 .header-box .body {
   font-size: 25px;
   font-family: "Arial";
-  color: rgb(85, 84, 84);
+  color: rgb(121, 119, 119);
   text-align: center;
   transform: translateY(-100px);
   margin: 32px;
@@ -60,16 +60,14 @@
   font-size: larger;
 }
 
-.heartdisease .h2 {
-  text-transform: capitalize;
-  color: rgb(0, 0, 0);
-}
-.heartdisease .p2 {
- font-size: large;
+
+.heart-disease .bodytext {
+ font-size: larger;
+ color: rgb(0, 0, 0);
   
 }
 .heart-disease .more {
- transform: translateY(30px);
+ transform: translate(-255px,50px);
  font-size: large;
  background-color: black;
  color: white;
@@ -84,8 +82,14 @@
   font-size: larger;
 }
 
+.statistics .bodytext {
+  font-size: larger;
+  color: rgb(0, 0, 0);
+   
+ }
+
 .statistics .more {
- transform: translateY(30px);
+ transform: translateY(20px);
  font-size: large;
  background-color: black;
  color: white;
@@ -100,8 +104,15 @@
   font-size: larger;
 }
 
+.model .bodytext {
+  font-size: larger;
+  color: rgb(0, 0, 0);
+   
+ }
+
+
 .model .more {
- transform: translateY(30px);
+ transform: translateY(20px);
  font-size: large;
  background-color: black;
  color: white;

@@ -37,12 +37,12 @@ export default function Home() {
         <h2>
           WHAT IS A HEART DISEASE?
         </h2>
-        <div>
-          <div>
+        <div className="bodytext">
+          
             <p2>
             A heart disease is any kind of disease that affects the health of the heart. the most common heart disease in the US is the coronary Artery Disease or CAD which affects 1 of every 20 adults of age 20 or older. 
             </p2>
-          </div>
+          
           <button className='more' onClick = {()=> buttonNav("/info")}>more</button>
         </div>
         
@@ -53,7 +53,7 @@ export default function Home() {
       <div  className='statistics'>
         <img src="https://assets.cdn.thewebconsole.com/ZWEB8327/images/5a723d5c93c90.jpg?m=c1e65a48bd99d67047ea4ac22b5b16a3" alt="From livewellhc.ca" width="800px" height ="500px"></img>
         <h2>Heart Disease Statistics</h2>
-        <div>
+        <div className="bodytext">
           <p3>Around 800,000 Americans suffer from a heart attack each year. worldwide more than 17 million people die from a cardiovascular disease each year. </p3>
         </div>
         <button className='more' onClick = {()=> buttonNav("/stats")}>more</button>
@@ -63,7 +63,7 @@ export default function Home() {
       <div  className='model'>
         <h2>Our Model</h2>
         <div>
-          <div><p4>Information about our model</p4></div>
+          <div className="bodytext"><p4>Information about our model</p4></div>
           <button button className='more'onClick = {()=> buttonNav("/model")}>more</button>
         </div>
         <img src="https://cdn.arstechnica.net/wp-content/uploads/2020/10/bci.jpg" alt="" width="800px" height ="600px"></img>

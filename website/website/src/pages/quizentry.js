@@ -1,16 +1,26 @@
 import NavBar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
+import "./quizentry.css"
 
 export default function QuizEntry() {
   const buttonNav = useNavigate();
   return(
     <div>
       <NavBar/>
-      <h2>Quiz Entry Page</h2>
-      <p1>
-        This page would briefly introduce the quiz and house a button to start for the user.
-      </p1>
-      <button onClick = {() => buttonNav('quiz')}> Begin Quiz</button>
+      <div className="entry-header">
+        <div className="textbox">
+        <h1>You will be ask # questions about you medical history, so our model can predict how prone you are to a heart disease.</h1>
+        </div>
+
+        <div > 
+        
+        <button  className="quiz-bottom" onClick = {() => buttonNav('quiz')}> Start Quiz</button>
+      
+      </div>
+      
+      </div>
+     
+     
     </div>
   )
 }
