@@ -3,12 +3,14 @@
   font-size: 27px;
   font-weight: 500;
   width: 500px;
-  background-color: rgb(24, 23, 23);
+  background-color: rgb(255, 255, 255);
   opacity: 0.3;
 }
 
 .header-box {
-  background-color: rgb(17, 17, 17);
+  
+  font-family: "Arial";
+  background-color: rgb(29, 29, 29);
   color: white;
   text-align: center;
   padding-top: 15%;
@@ -16,53 +18,107 @@
   height: 300px;
 }
 
-.header-box .quiz-button{
-  background-color: rgb(255, 100, 100);
+.header-box .title {
+  font-size: 25px;
+  font-family: "Arial";
   color: white;
+  text-align: center;
+  transform: translateY(-120px);
+  
+ 
+}
+
+
+.header-box .body {
+  font-size: 25px;
+  font-family: "Arial";
+  color: rgb(121, 119, 119);
+  text-align: center;
+  transform: translateY(-100px);
+  margin: 32px;
+}
+.header-box .quiz-button{
+  
+
+  font-size: 20px;
+  background-color: rgb(255, 100, 100);
+  color: rgb(253, 253, 253);
   text-align: center;
   border-radius: 10%;
   align-items: center;
-  height: 40px;
-  width: 100px;
+  height: 65px;
+  width: 150px;
+  transform: translateY(-105px);
+  
+ 
+  
 }
 
 .heart-disease {
+  font-family: "Arial";
   column-count: 2;
   font-size: larger;
-  font: arial;
 }
 
-.heartdisease .h2 {
-  text-transform: capitalize;
-  color: red;
-}
 
+.heart-disease .bodytext {
+ font-size: larger;
+ color: rgb(0, 0, 0);
+  
+}
 .heart-disease .more {
+ transform: translate(-255px,50px);
+ font-size: large;
  background-color: black;
  color: white;
  border-radius: 10%;
+ height: 40px;
+ width: 100px;
 }
 
 .statistics {
+  font-family: "Arial";
   column-count: 2;
   font-size: larger;
 }
 
+.statistics .bodytext {
+  font-size: larger;
+  color: rgb(0, 0, 0);
+   
+ }
+
 .statistics .more {
-  background-color: black;
-  color: white;
-  border-radius: 10%;
+ transform: translateY(20px);
+ font-size: large;
+ background-color: black;
+ color: white;
+ border-radius: 10%;
+ height: 40px;
+ width: 100px;
 }
 
 .model {
+  font-family: "Arial";
   column-count: 2;
   font-size: larger;
 }
 
+.model .bodytext {
+  font-size: larger;
+  color: rgb(0, 0, 0);
+   
+ }
+
+
 .model .more {
-  background-color: black;
-  color: white;
-  border-radius: 10%;
+ transform: translateY(20px);
+ font-size: large;
+ background-color: black;
+ color: white;
+ border-radius: 10%;
+ height: 40px;
+ width: 100px;
 }
 
 body {

@@ -1,8 +1,19 @@
 import React, { useRef, useState } from "react";
 import './quizcomponent.css'
 import { data } from "./questionlist";
+import axios from "axios";
+import { useEffect } from 'react';
 
 // Code inspired by tutorial from GreatStack Youtube Channel, https://www.youtube.com/watch?v=VMZ7lcSdVnY
+
+// const fetchAPI = async () =>{
+//   const response = await axios.get("http://localhost:8090/api/values");
+//   console.log(response.data.values);
+// };
+// useEffect(() =>{
+//   fetchAPI()
+// },[])
+
 const QuizComponent = () => {
 
   let [index, setIndex] = useState(0);
