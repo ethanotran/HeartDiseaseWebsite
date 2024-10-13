@@ -7,13 +7,8 @@ import "./home.css"
 export default function Home() {
   const buttonNav = useNavigate();
 
-  const fetchAPI = async () =>{
-    const response = await axios.get("http://localhost:8090/api/values");
-    console.log(response.data.values);
-  };
-  useEffect(() =>{
-    fetchAPI()
-  },[])
+  
+  
   return(
     <div>
       <NavBar/>
