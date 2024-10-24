@@ -50,3 +50,19 @@
   margin: auto;
   font-size: 18px;
 }
+
+.button-container button {
+  margin-right: 10rem;
+}
+
+#progress {
+  width: 100%;
+  background-color: grey;
+  text-align: right;
+}
+
+#bar {
+  width: 0%;
+  height: 30px;
+  background-color: green;
+}

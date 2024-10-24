@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import './quizcomponent.css'
 import { data } from "./questionlist";
+import { redirect } from "react-router-dom";
 
 // Code inspired by tutorial from GreatStack Youtube Channel, https://www.youtube.com/watch?v=VMZ7lcSdVnY
 const QuizComponent = () => {
@@ -11,11 +12,13 @@ const QuizComponent = () => {
   let [finish, setFinish] = useState(false)
   let temp
   let userResponse = new Array(data.length)
+  let bar = document.getElementById("bar")
 
+ 
   const validateResponse = () => {
     temp = document.getElementById("answer").value
     if (temp === "") {
-      return
+      alert("No repsonse was recorded")
     }
     if (typeof temp === "string") {
       if (temp === "male" || temp === "positive") {
@@ -40,7 +43,7 @@ const QuizComponent = () => {
     setLock(true)
   }
 
-  const nextQuestion = () =>{
+  const nextQuestion = () => {
 
     // Check for Question being answered
     if (lock === true) {
@@ -49,21 +52,41 @@ const QuizComponent = () => {
       setLock(false)
     }
 
+    bar = document.getElementById("bar")
+    bar.style.width = `${(index / data.length) * 100}%`
+
     // Check if quiz is finished
     if (index > data.length-1) {
       setFinish(true)
+      window.location.replace("/Result")
       setIndex(0)
       // Here we would return the userResponse to our backend
     }
   }
+
+  const previous = () => {
+    setIndex(--index)
+    if (index < 0) {
+      setIndex(0)
+    }
+    setQuestion(data[index])
+    setLock(false)
+    bar = document.getElementById("bar")
+    bar.style.width = `${(index / data.length) * 100}%`
+  }
   
   return (
     <div className='container'>
-    <h1>Quiz Sector</h1>
+    <div id ="progress">
+      <div id="bar" >{Math.round((index / data.length) * 100)}%</div>
+    </div>
     <hr/>
-    {finish?<></>:<> <h2>{index+1}. {question.question}</h2>
+    {finish?<></>:<> <h2>{question.question}</h2>
     <input type={data[index].dataType} id="answer"></input>
-    <button onClick={validateResponse}>Next</button>
+    <div className="button-container">
+      <button onClick={previous}>Back</button>
+      <button onClick={validateResponse}>Next</button>
+    </div>
     <div className="index"> Question {index+1} of {data.length} </div> </>}
   </div>
   )

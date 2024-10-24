@@ -43,7 +43,7 @@ export default function Home() {
         <div>
           <p3>Around 800,000 Americans suffer from a heart attack each year. worldwide more than 17 million people die from a cardiovascular disease each year. </p3>
         </div>
-        <button onClick = {()=> buttonNav("/stats")}>more</button>
+        <button className="more" onClick = {()=> buttonNav("/stats")}>more</button>
       </div>
       
 
@@ -51,7 +51,7 @@ export default function Home() {
         <h2>Our Model</h2>
         <div>
           <div><p4>Information about our model</p4></div>
-          <button onClick = {()=> buttonNav("/model")}>more</button>
+          <button className="more" onClick = {()=> buttonNav("/model")}>more</button>
         </div>
         <img src="https://cdn.arstechnica.net/wp-content/uploads/2020/10/bci.jpg" alt="" width="800px" height ="600px"></img>
       </div>

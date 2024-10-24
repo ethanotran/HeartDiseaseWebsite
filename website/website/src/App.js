@@ -7,7 +7,7 @@ import Stats from './pages/stats'
 import Error from './pages/error'
 import QuizEntry from './pages/quizentry'
 import Quiz from './pages/quiz'
-
+import Result from './pages/results'
 
 export default function App() {
   return (
@@ -20,6 +20,7 @@ export default function App() {
               <Route path="/Model" element={<Model/>}></Route>
               <Route path="/Stats" element={<Stats/>}></Route>
               <Route path="/Info" element={<Info/>}></Route>
+              <Route path="/Result" element={<Result/>}></Route>
               <Route path="/QuizEntry" element={<QuizEntry/>}></Route>
               <Route path="/QuizEntry/Quiz" element={<Quiz/>}></Route>
               <Route path="*" element={<Error/>}></Route>

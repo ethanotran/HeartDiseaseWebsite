@@ -3,10 +3,10 @@ import NavBar from "../components/navbar";
 
 export default function About() {
   return(
-    <div>
+    <body className="page1">
       <NavBar/>
-      <h2>About us Page</h2>
-      <p1>Team Description to Follow</p1>
-    </div>
+      <h1 className="header-box-info">About us Page</h1>
+      <p className="information">Team Description to Follow</p>
+    </body>
   )
 }
