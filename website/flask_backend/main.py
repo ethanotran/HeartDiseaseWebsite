@@ -29,12 +29,11 @@ cors = CORS(app)
 
 
 @app.route("/api/values",methods = ['GET'])
-
-
 def values():
     # example values for heart.csv models. Go to the site for a copy
     # paste version of below to use with postman
-    # Random example
+    #
+    # Example with random data
     # return jsonify(
     #     {
     #         "age": "35",
@@ -52,66 +51,69 @@ def values():
         # Example below with actual data from heart.csv where original label is 1
         # (positive for heart disease)
 
+    # return jsonify(
+    #     {
+    #         "age": "63",
+    #         "sex": "1",  # 0 or 1
+    #         "cp": "3",  # 0, 1, 2, or 3
+    #         "trtbps": "145",
+    #         "chol": "233",
+    #         "fbs": "1",  # 0 or 1
+    #         "restecg": "0",  # 0, 1, or 2
+    #         "thalachh": "150",
+    #         "exng": "0",  # 0 or 1
+    #         "caa": "0",  # 0, 1, 2, 3, or 4
+    #     }
+
+        # Example below where original label is 0
     return jsonify(
         {
-            "age": "63",
+            "age": "67",
             "sex": "1",  # 0 or 1
-            "cp": "3",  # 0, 1, 2, or 3
-            "trtbps": "145",
-            "chol": "233",
-            "fbs": "1",  # 0 or 1
+            "cp": "0",  # 0, 1, 2, or 3
+            "trtbps": "160",
+            "chol": "286",
+            "fbs": "0",  # 0 or 1
             "restecg": "0",  # 0, 1, or 2
-            "thalachh": "150",
-            "exng": "0",  # 0 or 1
-            "caa": "0",  # 0, 1, 2, 3, or 4
+            "thalachh": "108",
+            "exng": "1",  # 0 or 1
+            "caa": "3",  # 0, 1, 2, 3, or 4
         }
-
-
     )
 
 @app.route("/api/input",methods = ["POST"])
 def input():
         json_dict = request.get_json()
-        print(json_dict)
         #convert string values to ints
         for key in json_dict:
             json_dict[key] = int(json_dict[key])
-        print(json_dict)
+
         input = np.array(list(json_dict.values()))
         input = input.reshape(1, -1)
 
         prediction = models["RandomForestClassifier"].predict(input)
-
         if prediction == 0:
             return jsonify("Result: you may have elevated risk of heart disease.")
         else:
             return jsonify("Result: our model does not detect an elevated risk of heart disease.")
 
 def trainModels():
-
     root_dir = Path(__file__).resolve().parent.parent.parent
     filename = root_dir / "heart.csv"
-
     df1 = pd.read_csv(filename)
+
     # Dropping ambiguous columns not properly defined in dataset description
     df1 = df1.drop(columns=['oldpeak', 'slp', 'thall'])
     df1
 
     # columns: age, sex, cp, trtbps, chol, fbs, restecg, thalachh, exng, caa
 
-    # check for missing values
-    missing_values_1 = df1.isnull().sum()
-    missing_values_1
-
     # remove duplicate values
     df1 = df1.drop_duplicates()
-    df1
 
     #Drop noise (based on extra code/analysis in Kaggle
-
     index = df1.loc[df1['chol'] > 500].index
     df1.drop(index=index, inplace=True)
-    df1
 
     labels_1 = df1["output"]
     df1.pop("output")
@@ -143,5 +145,4 @@ def trainModels():
 
 if __name__ == "__main__":
     models = trainModels()
-    print(models)
     app.run(debug = True, port = 8090)
