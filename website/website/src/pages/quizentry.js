@@ -1,6 +1,7 @@
 import NavBar from "../components/navbar";
 import { useNavigate } from "react-router-dom";
 import { data } from "../components/questionlist";
+import "./quizentry.css"
 
 export default function QuizEntry() {
   const buttonNav = useNavigate();
@@ -14,7 +15,6 @@ export default function QuizEntry() {
         </h1>
         <button className="quiz-button"onClick = {() => buttonNav('quiz')}> Begin Quiz</button>
       </div>
-      
     </div>
   )
 }

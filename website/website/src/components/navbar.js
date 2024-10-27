@@ -3,15 +3,18 @@ import './navbar.css'
 import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
-  const buttonNav = useNavigate();
+ 
   return (
     <header className="header">
+       <a className="logo">Mediks</a>
         <nav className="navbar">
             <a href="/home">Home</a>
             <a href="/model">Model</a>
             <a href="/about">About Us</a>
-            <button className ='b' onClick = {()=> buttonNav("/quizentry")}>Quiz</button>
+            
         </nav>
+        
+        
     </header> 
   )
 }
