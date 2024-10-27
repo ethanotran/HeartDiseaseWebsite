@@ -125,3 +125,23 @@ body {
   background-color: white;
 }
 
+.header-box-info {
+  background-color: rgb(255, 254, 254);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 15%;
+  width: 100%;
+  height: 300px;
+}
+
+.information {
+  color: white;
+}
+
+.page1 {
+  background-color: black;
+}
+
+.button-container-button {
+  margin-right: 10px;
+}

@@ -3,10 +3,10 @@ import NavBar from "../components/navbar";
 
 export default function Model() {
   return(
-    <div>
+    <body className="page1">
       <NavBar/>
-      <h2>Model Description Page</h2>
-      <p1>Here we explain our model and how it works</p1>
-    </div>
+      <h1 className="header-box-info">Model Description Page</h1>
+      <p className="information">Here we explain our model and how it works</p>
+    </body>
   )
 }
