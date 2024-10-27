@@ -29,7 +29,10 @@ def values():
 
 @app.route("/api/input",methods = ["POST"])
 def input():
-        return jsonify({"Result": "your age is  " + request.json['age']})
+        return jsonify({"Result": "your data " + request.form['age'] + 
+        request.form['gender']  + request.form['impulseLevel'] + request.form['systolicBlood'] + 
+        request.form['diastolicBlood'] + request.form['glucoseLevel'] + request.form['kcmLevel?'] + 
+        request.form['troponinLevel?'] + request.form['class'] })
         
 
 
