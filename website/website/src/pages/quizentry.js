@@ -7,13 +7,14 @@ export default function QuizEntry() {
   const buttonNav = useNavigate();
   return(
     <div>
-      <NavBar/>
-      <div className="header-box">
-        <h1 >You will be asked {data.length} questions about your medical
-              history, so our model can predict how prone you are to heart disease. Click the button
-              below to begin.
-        </h1>
-        <button className="quiz-button"onClick = {() => buttonNav('quiz')}> Begin Quiz</button>
+     <NavBar/>
+      <div className="entry-header">
+        <div className="textbox">
+        <h1>You will be ask  {data.length} questions about you medical history, so our model can predict how prone you are to a heart disease.</h1>
+        </div>
+        <div> 
+        <button  className="quiz-bottom" onClick = {() => buttonNav('quiz')}> Start Quiz</button>
+        </div>
       </div>
     </div>
   )

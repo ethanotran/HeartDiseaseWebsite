@@ -70,9 +70,36 @@ const QuizComponent = () => {
     // Check if quiz is finished
     if (index > data.length-1) {
       setFinish(true)
-      window.location.replace("/Result")
+     // window.location.replace("/Result")
+     console.table(...[userResponse])
       setIndex(0)
       // Here we would return the userResponse to our backend
+
+      const formData = new FormData ()
+
+        //// you can hard code any number instead of userResponse[i] for testing
+        formData.append("age",userResponse[0])
+        formData.append("gender", userResponse[1])
+        formData.append("impulseLevel",userResponse[2])
+        formData.append("systolicBlood",userResponse[3])
+        formData.append("diastolicBlood",userResponse[4])
+        formData.append("glucoseLevel",userResponse[5])
+        formData.append("kcmLevel?",userResponse[6])
+        formData.append("troponinLevel?",userResponse[7])
+        formData.append("class",userResponse[8])
+        
+
+        console.log([...formData])
+
+         const submission = axios.postForm('http://localhost:8090/api/input',formData)
+
+              .then(function (response) {
+                  console.log(response);
+                })
+                .catch(function (error) {
+                  console.log(error);
+                })
+
     }
   }
 
