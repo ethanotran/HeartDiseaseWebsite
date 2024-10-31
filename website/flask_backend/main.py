@@ -10,6 +10,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import VotingClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegressionCV
 from sklearn.svm import LinearSVC
@@ -91,7 +92,7 @@ def input():
         input = np.array(list(json_dict.values()))
         input = input.reshape(1, -1)
 
-        prediction = models["RandomForestClassifier"].predict(input)
+        prediction = models["Ensemble"].predict(input)
         if prediction == 0:
             return jsonify("Result: you may have elevated risk of heart disease.")
         else:
@@ -135,6 +136,11 @@ def trainModels():
             model = i()
         model.fit(X_train_1, y_train_1)
         models[i.__name__] = model
+
+    ensemble_model = VotingClassifier(estimators=[('rf', models['RandomForestClassifier']),('kn', models['KNeighborsClassifier']),
+    ('gb', models['GradientBoostingClassifier']), ('lrsv', models['LogisticRegressionCV']), ('lsvc', models['LinearSVC'])])
+    ensemble_model = ensemble_model.fit(X_train_1, y_train_1)
+    models['Ensemble'] = ensemble_model
     return models
 
     # You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using "Save & Run All"
