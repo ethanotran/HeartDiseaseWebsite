@@ -22,37 +22,45 @@ const QuizComponent = () => {
   let [lock, setLock] = useState(false)
   let [question, setQuestion] = useState(data[index])
   let [finish, setFinish] = useState(false)
-  let temp
-  let userResponse = new Array(data.length)
+  let [answers, setAnswers] = useState([])
   let bar = document.getElementById("bar")
 
  
   const validateResponse = () => {
-    temp = document.getElementById("answer").value
-    if (temp === "") {
+     
+    if (document.getElementById("answer").value === "") {
       alert("No repsonse was recorded")
     }
-    if (typeof temp === "string") {
-      if (temp === "male" || temp === "positive") {
-        temp = 1
-      } else if (temp === "female" || temp === "negative") {
-        temp = 0
+
+    if (typeof document.getElementById("answer").value === "string") {
+      if (document.getElementById("answer").value === "male" || document.getElementById("answer").value === "positive") {
+        document.getElementById("answer").value = 1
+      } else if (document.getElementById("answer").value === "female" || document.getElementById("answer").value === "negative") {
+        document.getElementById("answer").value = 0
       }
     }
 
-    if (temp <= data[index].upper && temp >= data[index].lower) {
-      setAnswer(temp)
+    if (document.getElementById("answer").value <= data[index].upper && document.getElementById("answer").value >= data[index].lower) {
+      addNewAnswer(document.getElementById("answer").value)
       nextQuestion()
     } else {
       alert("Invalid response: Answer cannot be recognized by model")
     }
   }
 
-  const setAnswer = (e) => {
+  const addNewAnswer = (e) => {
     // Save user response
-    userResponse[index] = e
-    console.log(userResponse[index])
+    //userResponse[index] = e
+    if (index > answers.length || index === 0) {
+      const updateAnswers = [...answers, e]
+      setAnswers(updateAnswers)
+    } else {
+      answers[index] = e
+      setAnswers(answers)
+    }
+    
     setLock(true)
+    console.log(...answers)
   }
 
   const nextQuestion = () => {
@@ -104,9 +112,8 @@ const QuizComponent = () => {
   }
 
   const previous = () => {
-    setIndex(--index)
-    if (index < 0) {
-      setIndex(0)
+    if (index != 0) {
+      setIndex(--index)
     }
     setQuestion(data[index])
     setLock(false)
@@ -119,9 +126,8 @@ const QuizComponent = () => {
     <div id ="progress">
       <div id="bar" >{Math.round((index / data.length) * 100)}%</div>
     </div>
-    <hr/>
     {finish?<></>:<> <h2>{question.question}</h2>
-    <input type={data[index].dataType} id="answer"></input>
+    <input type={question.dataType} min={question.lower} max={question.upper} className={question.class} id="answer"></input>
     <div className="button-container">
       <button onClick={previous}>Back</button>
       <button onClick={validateResponse}>Next</button>

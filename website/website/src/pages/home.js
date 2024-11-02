@@ -23,9 +23,9 @@ export default function Home() {
         </div>
         
         <div className='body'>
-          <p1>with our machine learning model, you take a survey and it will predict if you are likely to develop a heart disease. You can also find important information about heart health and diseases.</p1>
+          <p>with our machine learning model, you take a survey and it will predict if you are likely to develop a heart disease. You can also find important information about heart health and diseases.</p>
         </div>
-        <button className='quiz-button' onClick={()=> buttonNav("/quizentry")}>Begin Quiz</button>
+        <button className='quiz-button-main' onClick={()=> buttonNav("/quizentry")}>Begin Quiz</button>
       </div>
       
       <div  className='heart-disease'>
@@ -34,9 +34,9 @@ export default function Home() {
         </h2>
         <div className="bodytext">
           
-            <p2>
+            <p>
             A heart disease is any kind of disease that affects the health of the heart. the most common heart disease in the US is the coronary Artery Disease or CAD which affects 1 of every 20 adults of age 20 or older. 
-            </p2>
+            </p>
           
           <button className='more' onClick = {()=> buttonNav("/info")}>more</button>
         </div>
@@ -49,7 +49,7 @@ export default function Home() {
         <img src="https://assets.cdn.thewebconsole.com/ZWEB8327/images/5a723d5c93c90.jpg?m=c1e65a48bd99d67047ea4ac22b5b16a3" alt="From livewellhc.ca" width="800px" height ="500px"></img>
         <h2>Heart Disease Statistics</h2>
         <div className="bodytext">
-          <p3>Around 800,000 Americans suffer from a heart attack each year. worldwide more than 17 million people die from a cardiovascular disease each year. </p3>
+          <p>Around 800,000 Americans suffer from a heart attack each year. worldwide more than 17 million people die from a cardiovascular disease each year. </p>
         </div>
 
         <button className="more" onClick = {()=> buttonNav("/stats")}>more</button>
@@ -59,7 +59,7 @@ export default function Home() {
       <div  className='model'>
         <h2>Our Model</h2>
         <div>
-          <div className="bodytext"><p4>Information about our model</p4></div>
+          <div className="bodytext"><p>Information about our model</p></div>
           <button button className='more'onClick = {()=> buttonNav("/model")}>more</button>
         </div>
         <img src="https://cdn.arstechnica.net/wp-content/uploads/2020/10/bci.jpg" alt="" width="800px" height ="600px"></img>

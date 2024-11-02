@@ -24,8 +24,18 @@
   color: white;
   text-align: center;
   transform: translateY(-120px);
-  
- 
+}
+
+.header-box .quiz-button-main {
+  font-size: 20px;
+  background-color: rgb(255, 100, 100);
+  color: rgb(253, 253, 253);
+  text-align: center;
+  border-radius: 10%;
+  align-items: center;
+  height: 65px;
+  width: 150px;
+  transform: translateY(-105px);
 }
 
 
@@ -37,9 +47,8 @@
   transform: translateY(-100px);
   margin: 32px;
 }
-.header-box .quiz-button{
-  
 
+.header-box .quiz-button {
   font-size: 20px;
   background-color: rgb(255, 100, 100);
   color: rgb(253, 253, 253);
@@ -48,10 +57,7 @@
   align-items: center;
   height: 65px;
   width: 150px;
-  transform: translateY(-105px);
-  
- 
-  
+  transform: translateY(0px);
 }
 
 .heart-disease {
