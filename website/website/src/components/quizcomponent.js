@@ -3,6 +3,7 @@ import './quizcomponent.css'
 import { data } from "./questionlist";
 import { redirect } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
 
@@ -24,6 +25,7 @@ const QuizComponent = () => {
   let [userResponse, setUserResponse] = useState([])
   let temp;
   let bar = document.getElementById("bar")
+  const navigate = useNavigate()
 
  
   const validateResponse = () => {
@@ -43,22 +45,16 @@ const QuizComponent = () => {
     }
 
     if (temp <= data[index].upper && temp >= data[index].lower) {
-      setAnswer(temp)
+      userResponse[index] = temp
       nextQuestion()
     } else {
       alert("Invalid response: Answer cannot be recognized by model")
     }
   }
 
-  const setAnswer = (e) => {
-    // Save user response
-    userResponse.push(e)
-    console.log(userResponse[index])
-  }
 
   const nextQuestion = () => {
-    // Check for Question being answered
-    console.log(userResponse)
+    // Check for Question being answere
     setIndex(++index)
     setQuestion(data[index])
 
@@ -73,31 +69,26 @@ const QuizComponent = () => {
       setIndex(0)
       // Here we would return the userResponse to our backend
 
-      const formData = new FormData ()
-
-        //// you can hard code any number instead of userResponse[i] for testing
-        formData.append("age",userResponse[0])
-        formData.append("gender", userResponse[1])
-        formData.append("impulseLevel",userResponse[2])
-        formData.append("systolicBlood",userResponse[3])
-        formData.append("diastolicBlood",userResponse[4])
-        formData.append("glucoseLevel",userResponse[5])
-        formData.append("kcmLevel?",userResponse[6])
-        formData.append("troponinLevel?",userResponse[7])
-        formData.append("class",userResponse[8])
-        
-
-        console.log([...formData])
-
-         const submission = axios.postForm('http://localhost:8090/api/example',formData)
-
-              .then(function (response) {
-                  console.log(response);
-                })
-                .catch(function (error) {
-                  console.log(error);
-                })
-
+      axios({method: "POST",
+        url: "http://localhost:8090/api/input",
+        data: {
+          "age": userResponse[0],
+          "gender": userResponse[1],
+          "cp": userResponse[2],
+          "trtbps": userResponse[3],
+          "chol": userResponse[4],
+          "fbs": userResponse[5],
+          "restecg": userResponse[6],
+          "thalachh": userResponse[7],
+          "exng": userResponse[8],
+          "caa": userResponse[9]
+        }
+      }).then(function (response) {
+        navigate("/results", {state: {result:response.data}, replace:true})
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
     }
   }
 

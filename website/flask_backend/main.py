@@ -98,9 +98,9 @@ def input():
 
         prediction = models["Ensemble"].predict(input)
         if prediction == 0:
-            return jsonify("Result: you may have elevated risk of heart disease.")
-        else:
-            return jsonify("Result: our model does not detect an elevated risk of heart disease.")
+            return jsonify("Result: our ensemble model does not detect an elevated risk of heart disease.")
+        elif prediction == 1:
+            return jsonify("Result: our ensemble model detects an elevated risk of heart disease.")
 
 def trainModels():
     root_dir = Path(__file__).resolve().parent.parent.parent

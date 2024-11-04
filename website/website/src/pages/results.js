@@ -1,15 +1,11 @@
 import NavBar from "../components/navbar";
+import ResultsComponent from "../components/resultcomponent";
 
-
-export default function Result() {
+export default function Results() {
   return(
     <div>
       <NavBar/>
-      <body class="page1">
-        <h1 className="header-box-info">Results page</h1>
-        <p className="information">Quiz has finished</p>
-      </body>
-      
+      <ResultsComponent/>
     </div>
   )
 }
