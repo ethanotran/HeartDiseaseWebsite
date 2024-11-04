@@ -10,10 +10,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import VotingClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.linear_model import LogisticRegressionCV
-from sklearn.svm import LinearSVC
+
 
 # Track training timing/completion
 from tqdm import tqdm
@@ -106,6 +106,9 @@ def trainModels():
 
     # remove duplicate values
     df1 = df1.drop_duplicates()
+    df1['heart_attack'] = df1['class'].map({'negative': 0, 'positive': 1})
+    df1 = df1.drop("class",axis=1)
+    df1
 
     #Drop noise (based on extra code/analysis in Kaggle
     index = df1.loc[df1['chol'] > 500].index
@@ -115,25 +118,16 @@ def trainModels():
     df1.pop("output")
     models = {}
 
-    for i in tqdm([RandomForestClassifier, KNeighborsClassifier, GradientBoostingClassifier, LogisticRegressionCV,
-                   LinearSVC]):
-        X_train_1, X_test_1, y_train_1, y_test_1 = train_test_split(df1, labels_1, test_size=0.15)
+    for i in tqdm([RandomForestClassifier, DecisionTreeClassifier, GradientBoostingClassifier, AdaBoostClassifier]):
+        X_train_1, X_test_1, y_train_1, y_test_1 = train_test_split(df1, labels_1, test_size=0.2)
         # scale the data with Z score normalization
         scale = StandardScaler()
         scale.fit(X_train_1)
         X_train_1 = scale.fit_transform(X_train_1)
         X_test_1 = scale.transform(X_test_1)
 
-        if i == LogisticRegressionCV:
-            model = i(penalty='elasticnet', l1_ratios=[0.1, 0.5, 0.9], solver='saga', max_iter=1000)
-            # max_iter has to be increased just for the model to converge
-        else:
-            model = i()
-        model.fit(X_train_1, y_train_1)
-        models[i.__name__] = model
-
-    ensemble_model = VotingClassifier(estimators=[('rf', models['RandomForestClassifier']),('kn', models['KNeighborsClassifier']),
-    ('gb', models['GradientBoostingClassifier']), ('lrsv', models['LogisticRegressionCV']), ('lsvc', models['LinearSVC'])])
+    ensemble_model = VotingClassifier(estimators=[('rf', models['RandomForestClassifier']),('dt', models['DecisionTreeClassifier,']),
+    ('gb', models['GradientBoostingClassifier']), ('ab', models['AdaBoostClassifier'])])
     ensemble_model = ensemble_model.fit(X_train_1, y_train_1)
     models['Ensemble'] = ensemble_model
     return models
