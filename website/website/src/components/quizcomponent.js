@@ -19,24 +19,26 @@ import { useEffect } from 'react';
 const QuizComponent = () => {
 
   let [index, setIndex] = useState(0)
-  let [lock, setLock] = useState(false)
   let [question, setQuestion] = useState(data[index])
   let [finish, setFinish] = useState(false)
-  let temp
-  let userResponse = new Array(data.length)
+  let [userResponse, setUserResponse] = useState([])
+  let temp;
   let bar = document.getElementById("bar")
 
  
   const validateResponse = () => {
     temp = document.getElementById("answer").value
     if (temp === "") {
-      alert("No repsonse was recorded")
+      alert("No response was recorded")
     }
     if (typeof temp === "string") {
       if (temp === "male" || temp === "positive") {
         temp = 1
       } else if (temp === "female" || temp === "negative") {
         temp = 0
+      }
+      else {
+        temp = parseInt(temp, 10)
       }
     }
 
@@ -50,19 +52,15 @@ const QuizComponent = () => {
 
   const setAnswer = (e) => {
     // Save user response
-    userResponse[index] = e
+    userResponse.push(e)
     console.log(userResponse[index])
-    setLock(true)
   }
 
   const nextQuestion = () => {
-
     // Check for Question being answered
-    if (lock === true) {
-      setIndex(++index)
-      setQuestion(data[index])
-      setLock(false)
-    }
+    console.log(userResponse)
+    setIndex(++index)
+    setQuestion(data[index])
 
     bar = document.getElementById("bar")
     bar.style.width = `${(index / data.length) * 100}%`
@@ -91,7 +89,7 @@ const QuizComponent = () => {
 
         console.log([...formData])
 
-         const submission = axios.postForm('http://localhost:8090/api/input',formData)
+         const submission = axios.postForm('http://localhost:8090/api/example',formData)
 
               .then(function (response) {
                   console.log(response);
@@ -109,7 +107,6 @@ const QuizComponent = () => {
       setIndex(0)
     }
     setQuestion(data[index])
-    setLock(false)
     bar = document.getElementById("bar")
     bar.style.width = `${(index / data.length) * 100}%`
   }
@@ -121,6 +118,7 @@ const QuizComponent = () => {
     </div>
     <hr/>
     {finish?<></>:<> <h2>{question.question}</h2>
+    <h3>Range: {data[index].upper} - {data[index].lower}</h3>
     <input type={data[index].dataType} id="answer"></input>
     <div className="button-container">
       <button onClick={previous}>Back</button>
