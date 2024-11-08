@@ -42,6 +42,7 @@ const QuizComponent = () => {
 
     if (document.getElementById("answer").value <= data[index].upper && document.getElementById("answer").value >= data[index].lower) {
       addNewAnswer(document.getElementById("answer").value)
+      setLock(true)
       nextQuestion()
     } else {
       alert("Invalid response: Answer cannot be recognized by model")
