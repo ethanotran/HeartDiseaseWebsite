@@ -5,7 +5,11 @@ export default function Results() {
   return(
     <div>
       <NavBar/>
-      <ResultsComponent/>
+      <div className="page1">
+        <h1 className="header-box-info">Results page</h1>
+        <p className="information">Quiz has finished</p>
+        <ResultsComponent/>
+      </div>
     </div>
   )
 }
