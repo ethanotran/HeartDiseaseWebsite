@@ -27,24 +27,25 @@ const QuizComponent = () => {
   const navigate = useNavigate()
 
  
-  const validateResponse = () => {   
-    if (document.getElementById("answer").value === "") {
+  const validateResponse = () => {
+    let temp = document.getElementById("answer").value   
+    if (temp === "") {
       alert("No response was recorded")
     }
 
-    if (typeof document.getElementById("answer").value === "string") {
-      if (document.getElementById("answer").value === "male" || document.getElementById("answer").value === "positive") {
-        document.getElementById("answer").value = 1
-      } else if (document.getElementById("answer").value === "female" || document.getElementById("answer").value === "negative") {
-        document.getElementById("answer").value = 0
+    if (typeof temp === "string") {
+      if (temp === "male" || temp === "positive") {
+        temp = 1
+      } else if (temp === "female" || temp === "negative") {
+        temp = 0
       }
       else {
         temp = parseInt(temp, 10)
       }
     }
 
-    if (document.getElementById("answer").value <= data[index].upper && document.getElementById("answer").value >= data[index].lower) {
-      addNewAnswer(document.getElementById("answer").value)
+    if (temp <= data[index].upper && temp >= data[index].lower) {
+      addNewAnswer(temp)
       nextQuestion()
     } else {
       alert("Invalid response: Answer cannot be recognized by model")
@@ -61,8 +62,6 @@ const QuizComponent = () => {
       answers[index] = e
       setAnswers(answers)
     }
-    
-    setLock(true)
     console.log(...answers)
   }
 
@@ -78,23 +77,23 @@ const QuizComponent = () => {
     if (index > data.length-1) {
       setFinish(true)
      // window.location.replace("/Result")
-     console.table(...[userResponse])
+     console.table(...[answers])
       setIndex(0)
       // Here we would return the userResponse to our backend
 
       axios({method: "POST",
         url: "http://localhost:8090/api/input",
         data: {
-          "age": userResponse[0],
-          "gender": userResponse[1],
-          "cp": userResponse[2],
-          "trtbps": userResponse[3],
-          "chol": userResponse[4],
-          "fbs": userResponse[5],
-          "restecg": userResponse[6],
-          "thalachh": userResponse[7],
-          "exng": userResponse[8],
-          "caa": userResponse[9]
+          "age": answers[0],
+          "gender": answers[1],
+          "cp": answers[2],
+          "trtbps": answers[3],
+          "chol": answers[4],
+          "fbs": answers[5],
+          "restecg": answers[6],
+          "thalachh": answers[7],
+          "exng": answers[8],
+          "caa": answers[9]
         }
       }).then(function (response) {
         navigate("/results", {state: {result:response.data}, replace:true})
