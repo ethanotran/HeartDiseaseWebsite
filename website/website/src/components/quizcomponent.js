@@ -3,6 +3,7 @@ import './quizcomponent.css'
 import { data } from "./questionlist";
 import { redirect } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
 
@@ -19,17 +20,16 @@ import { useEffect } from 'react';
 const QuizComponent = () => {
 
   let [index, setIndex] = useState(0)
-  let [lock, setLock] = useState(false)
   let [question, setQuestion] = useState(data[index])
   let [finish, setFinish] = useState(false)
   let [answers, setAnswers] = useState([])
   let bar = document.getElementById("bar")
+  const navigate = useNavigate()
 
  
-  const validateResponse = () => {
-     
+  const validateResponse = () => {   
     if (document.getElementById("answer").value === "") {
-      alert("No repsonse was recorded")
+      alert("No response was recorded")
     }
 
     if (typeof document.getElementById("answer").value === "string") {
@@ -37,6 +37,9 @@ const QuizComponent = () => {
         document.getElementById("answer").value = 1
       } else if (document.getElementById("answer").value === "female" || document.getElementById("answer").value === "negative") {
         document.getElementById("answer").value = 0
+      }
+      else {
+        temp = parseInt(temp, 10)
       }
     }
 
@@ -64,13 +67,9 @@ const QuizComponent = () => {
   }
 
   const nextQuestion = () => {
-
-    // Check for Question being answered
-    if (lock === true) {
-      setIndex(++index)
-      setQuestion(data[index])
-      setLock(false)
-    }
+    // Check for Question being answere
+    setIndex(++index)
+    setQuestion(data[index])
 
     bar = document.getElementById("bar")
     bar.style.width = `${(index / data.length) * 100}%`
@@ -83,31 +82,26 @@ const QuizComponent = () => {
       setIndex(0)
       // Here we would return the userResponse to our backend
 
-      const formData = new FormData ()
-
-        //// you can hard code any number instead of userResponse[i] for testing
-        formData.append("age",userResponse[0])
-        formData.append("gender", userResponse[1])
-        formData.append("impulseLevel",userResponse[2])
-        formData.append("systolicBlood",userResponse[3])
-        formData.append("diastolicBlood",userResponse[4])
-        formData.append("glucoseLevel",userResponse[5])
-        formData.append("kcmLevel?",userResponse[6])
-        formData.append("troponinLevel?",userResponse[7])
-        formData.append("class",userResponse[8])
-        
-
-        console.log([...formData])
-
-         const submission = axios.postForm('http://localhost:8090/api/input',formData)
-
-              .then(function (response) {
-                  console.log(response);
-                })
-                .catch(function (error) {
-                  console.log(error);
-                })
-
+      axios({method: "POST",
+        url: "http://localhost:8090/api/input",
+        data: {
+          "age": userResponse[0],
+          "gender": userResponse[1],
+          "cp": userResponse[2],
+          "trtbps": userResponse[3],
+          "chol": userResponse[4],
+          "fbs": userResponse[5],
+          "restecg": userResponse[6],
+          "thalachh": userResponse[7],
+          "exng": userResponse[8],
+          "caa": userResponse[9]
+        }
+      }).then(function (response) {
+        navigate("/results", {state: {result:response.data}, replace:true})
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
     }
   }
 
@@ -116,7 +110,6 @@ const QuizComponent = () => {
       setIndex(--index)
     }
     setQuestion(data[index])
-    setLock(false)
     bar = document.getElementById("bar")
     bar.style.width = `${(index / data.length) * 100}%`
   }
