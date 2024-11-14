@@ -9,7 +9,6 @@ export default function Result() {
         <h1 className="header-box-info">Results page</h1>
         <p className="information">Quiz has finished</p>
       </div>
-      
     </div>
   )
 }
