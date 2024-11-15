@@ -15,6 +15,34 @@ export const data = [
     option3: "other",
     option4: "prefer not to answer"
   },
+  
+    {
+    question: "What is your chest pain type?",
+    dataType: "number",
+    upper: 3,
+    lower: 0
+  },
+
+  {
+    question: "What is your maximum heart rate?",
+    dataType: "number",
+    upper: 210,
+    lower: 0
+  },
+
+  {
+    question: "Do you have exercise induced angina?",
+    dataType: "number",
+    upper: 1,
+    lower: 0
+  },
+
+  {
+    question: "What was the number of major vessels colored by cardiac fluoroscopy?",
+    dataType: "number",
+    upper: 3,
+    lower: 0
+  },
 
   {
     questionType: "slider",
@@ -36,28 +64,19 @@ export const data = [
 
   {
     questionType: "slider",
-    question: "What is your diastolic blood pressure? (Bottom number)",
+    question: "What is your Creatinie Kinase MB (CK-MB) level? ",
     type: "range",
-    upper: 150,
+    upper: 300,
     lower: 0,
     step: 5
   },
 
   {
     questionType: "slider",
-    question: "What are is your glucose level? (Usual range: 70-110)",
-    type: "range",
-    upper: 130,
-    lower: 50,
-    step: 10
-  },
-
-  {
-    questionType: "slider",
-    question: "What is your troponin level?",
-    type: "range",
-    upper: 1,
+    question: "What is your troponin level? ",
+    type: "number",
+    upper: 15,
     lower: 0,
-    step: 0.1
-  }
+
+  },
 ]

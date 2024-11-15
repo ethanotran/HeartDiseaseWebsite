@@ -3,6 +3,7 @@ import './quizcomponent.css'
 import { data } from "./questionlist";
 import { redirect } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
 
@@ -19,12 +20,12 @@ import { useEffect } from 'react';
 const QuizComponent = () => {
 
   let [index, setIndex] = useState(0)
-  let [lock, setLock] = useState(false)
   let [question, setQuestion] = useState(data[index])
   let [finish, setFinish] = useState(false)
   let [answers, setAnswers] = useState([])
   let [questionType, setQuestionType] = useState(data[index].questionType)
   let bar = document.getElementById("bar")
+  const navigate = useNavigate()
 
   const addNewAnswer = (ans) => {
     if (index > answers.length) {
@@ -34,6 +35,9 @@ const QuizComponent = () => {
       answers[index] = ans
       setAnswers(answers)
     }
+
+    console.log(...answers)
+
   }
 
   
@@ -60,9 +64,30 @@ const QuizComponent = () => {
     if (index === data.length-1) {
       bar.style.width = `${(index / data.length) * 100}%`
       setFinish(true)
-      window.location.replace("/Result")
-      
-      // Here we send the answers array to backend
+     console.table(...[answers])
+      setIndex(0)
+      // Here we send the answers array to the backend
+
+      axios({method: "POST",
+        url: "http://localhost:8090/api/input",
+        data: {
+          "age": answers[0],
+          "gender": answers[1],
+          "cp": answers[2],
+          "trtbps": answers[3],
+          "chol": answers[4],
+          "fbs": answers[5],
+          "restecg": answers[6],
+          "thalachh": answers[7],
+          "exng": answers[8],
+          "caa": answers[9]
+        }
+      }).then(function (response) {
+        navigate("/results", {state: {result:response.data}, replace:true})
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
     }
   }
 
@@ -72,7 +97,6 @@ const QuizComponent = () => {
     }
 
     setQuestion(data[index])
-    setLock(false)
     bar = document.getElementById("bar")
     bar.style.width = `${(index / data.length) * 100}%`
     
