@@ -9,11 +9,9 @@ export const data = [
 
   {
     questionType: "dropdown",
-    question: "What gender do you identify as?",
+    question: "What is your sex?",
     option1: "male",
     option2: "female",
-    option3: "other",
-    option4: "prefer not to answer"
   },
   
     {

@@ -124,8 +124,16 @@ const QuizComponent = () => {
         return
       }
     }
-
     setLock(true)
+    if (ans == "male"){
+      addNewAnswer(0)
+      return
+          
+    }
+    else if (ans == "female") {
+      addNewAnswer(1)
+     return
+    }
     addNewAnswer(ans)
 
   }
