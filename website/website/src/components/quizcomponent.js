@@ -3,6 +3,7 @@ import './quizcomponent.css'
 import { data } from "./questionlist";
 import { redirect } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
 
@@ -19,29 +20,32 @@ import { useEffect } from 'react';
 const QuizComponent = () => {
 
   let [index, setIndex] = useState(0)
-  let [lock, setLock] = useState(false)
   let [question, setQuestion] = useState(data[index])
   let [finish, setFinish] = useState(false)
   let [answers, setAnswers] = useState([])
   let bar = document.getElementById("bar")
+  const navigate = useNavigate()
 
  
   const validateResponse = () => {
-     
-    if (document.getElementById("answer").value === "") {
-      alert("No repsonse was recorded")
+    let temp = document.getElementById("answer").value   
+    if (temp === "") {
+      alert("No response was recorded")
     }
 
-    if (typeof document.getElementById("answer").value === "string") {
-      if (document.getElementById("answer").value === "male" || document.getElementById("answer").value === "positive") {
-        document.getElementById("answer").value = 1
-      } else if (document.getElementById("answer").value === "female" || document.getElementById("answer").value === "negative") {
-        document.getElementById("answer").value = 0
+    if (typeof temp === "string") {
+      if (temp === "male" || temp === "positive") {
+        temp = 1
+      } else if (temp === "female" || temp === "negative") {
+        temp = 0
+      }
+      else {
+        temp = parseInt(temp, 10)
       }
     }
 
-    if (document.getElementById("answer").value <= data[index].upper && document.getElementById("answer").value >= data[index].lower) {
-      addNewAnswer(document.getElementById("answer").value)
+    if (temp <= data[index].upper && temp >= data[index].lower) {
+      addNewAnswer(temp)
       nextQuestion()
     } else {
       alert("Invalid response: Answer cannot be recognized by model")
@@ -58,19 +62,13 @@ const QuizComponent = () => {
       answers[index] = e
       setAnswers(answers)
     }
-    
-    setLock(true)
     console.log(...answers)
   }
 
   const nextQuestion = () => {
-
-    // Check for Question being answered
-    if (lock === true) {
-      setIndex(++index)
-      setQuestion(data[index])
-      setLock(false)
-    }
+    // Check for Question being answere
+    setIndex(++index)
+    setQuestion(data[index])
 
     bar = document.getElementById("bar")
     bar.style.width = `${(index / data.length) * 100}%`
@@ -79,35 +77,30 @@ const QuizComponent = () => {
     if (index > data.length-1) {
       setFinish(true)
      // window.location.replace("/Result")
-     console.table(...[userResponse])
+     console.table(...[answers])
       setIndex(0)
       // Here we would return the userResponse to our backend
 
-      const formData = new FormData ()
-
-        //// you can hard code any number instead of userResponse[i] for testing
-        formData.append("age",userResponse[0])
-        formData.append("gender", userResponse[1])
-        formData.append("impulseLevel",userResponse[2])
-        formData.append("systolicBlood",userResponse[3])
-        formData.append("diastolicBlood",userResponse[4])
-        formData.append("glucoseLevel",userResponse[5])
-        formData.append("kcmLevel?",userResponse[6])
-        formData.append("troponinLevel?",userResponse[7])
-        formData.append("class",userResponse[8])
-        
-
-        console.log([...formData])
-
-         const submission = axios.postForm('http://localhost:8090/api/input',formData)
-
-              .then(function (response) {
-                  console.log(response);
-                })
-                .catch(function (error) {
-                  console.log(error);
-                })
-
+      axios({method: "POST",
+        url: "http://localhost:8090/api/input",
+        data: {
+          "age": answers[0],
+          "gender": answers[1],
+          "cp": answers[2],
+          "trtbps": answers[3],
+          "chol": answers[4],
+          "fbs": answers[5],
+          "restecg": answers[6],
+          "thalachh": answers[7],
+          "exng": answers[8],
+          "caa": answers[9]
+        }
+      }).then(function (response) {
+        navigate("/results", {state: {result:response.data}, replace:true})
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
     }
   }
 
@@ -116,7 +109,6 @@ const QuizComponent = () => {
       setIndex(--index)
     }
     setQuestion(data[index])
-    setLock(false)
     bar = document.getElementById("bar")
     bar.style.width = `${(index / data.length) * 100}%`
   }

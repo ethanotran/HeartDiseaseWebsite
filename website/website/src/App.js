@@ -11,6 +11,7 @@ import QuizEntry from './pages/quizentry'
 import Quiz from './pages/quiz'
 import Result from './pages/results'
 import Testbackend from './pages/testbackend'
+import Results from './pages/results'
 
 
 export default function App() {
@@ -26,7 +27,7 @@ export default function App() {
               <Route path="/Model" element={<Model/>}></Route>
               <Route path="/Stats" element={<Stats/>}></Route>
               <Route path="/Info" element={<Info/>}></Route>
-              <Route path="/Result" element={<Result/>}></Route>
+              <Route path="/Results" element={<Results/>}></Route>
               <Route path="/QuizEntry" element={<QuizEntry/>}></Route>
               <Route path="/QuizEntry/Quiz" element={<Quiz/>}></Route>
               <Route path="/testbackend" element={<Testbackend/>}></Route>
