@@ -46,7 +46,7 @@ export const data = [
 
   {
     questionType: "slider",
-    question: "What is your impulse level? (Impulse refers to the number of times your heart beats per minute, usually within 60-100 times for the average adult)",
+    question: "What is your impulse level? (Impulse refers to the number of times your heart beats per minute at rest, usually within 60-100 times for the average adult)",
     type: "number",
     upper: 120,
     lower: 30,
