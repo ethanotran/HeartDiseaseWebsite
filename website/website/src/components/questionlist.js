@@ -9,11 +9,9 @@ export const data = [
 
   {
     questionType: "dropdown",
-    question: "What gender do you identify as?",
+    question: "What is your sex?",
     option1: "male",
     option2: "female",
-    option3: "other",
-    option4: "prefer not to answer"
   },
   
     {
@@ -46,7 +44,7 @@ export const data = [
 
   {
     questionType: "slider",
-    question: "What is your impulse level? (Impulse refers to the number of times your heart beats per minute, usually within 60-100 times for the average adult)",
+    question: "What is your impulse level? (Impulse refers to the number of times your heart beats per minute at rest, usually within 60-100 times for the average adult)",
     type: "number",
     upper: 120,
     lower: 30,
