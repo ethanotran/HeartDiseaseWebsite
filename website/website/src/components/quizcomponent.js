@@ -42,14 +42,14 @@ const QuizComponent = () => {
 
   
   const nextQuestion = () => {
-    validateAnswer(document.getElementById("answer").value)
-    isFinished()
-
-    if (lock === true) {
+    if (validateAnswer(document.getElementById("answer").value) === true) {
+      if (index === data.length-1){
+        isFinished()
+        return
+      }
       setIndex(++index)
       setQuestion(data[index])
       setQuestionType(question.questionType)
-      setLock(false)
     }
     
     bar = document.getElementById("bar")
@@ -61,34 +61,34 @@ const QuizComponent = () => {
   }
 
   const isFinished = () => {
-    if (index === data.length-1) {
-      bar.style.width = `${(index / data.length) * 100}%`
-      setFinish(true)
-     console.table(...[answers])
-      setIndex(0)
-      // Here we send the answers array to the backend
+    
+    bar.style.width = `${(index / data.length) * 100}%`
+    setFinish(true)
+    console.table(...[answers])
+    setIndex(0)
+    // Here we send the answers array to the backend
 
-      axios({method: "POST",
-        url: "http://localhost:8090/api/input",
-        data: {
-          "age": answers[0],
-          "gender": answers[1],
-          "cp": answers[2],
-          "trtbps": answers[3],
-          "chol": answers[4],
-          "fbs": answers[5],
-          "restecg": answers[6],
-          "thalachh": answers[7],
-          "exng": answers[8],
-          "caa": answers[9]
-        }
-      }).then(function (response) {
-        navigate("/results", {state: {result:response.data}, replace:true})
-      })
-      .catch(function(error) {
-        console.log(error)
-      })
-    }
+    axios({method: "POST",
+      url: "http://localhost:8090/api/input",
+      data: {
+        "age": answers[0],
+        "gender": answers[1],
+        "cp": answers[2],
+        "trtbps": answers[3],
+        "chol": answers[4],
+        "fbs": answers[5],
+        "restecg": answers[6],
+        "thalachh": answers[7],
+        "exng": answers[8],
+        "caa": answers[9]
+      }
+    }).then(function (response) {
+      navigate("/results", {state: {result:response.data}, replace:true})
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+    
   }
 
   const previousQuestion = () => {
@@ -106,13 +106,14 @@ const QuizComponent = () => {
     const regex = new RegExp("/^\\s*$/")
     if (regex.test(ans)) {
       alert("Empty Response: Please provide a response")
+      return false
     }
 
     // Check written response question
     if (questionType === "input") {
       if (ans > question.upper || ans < question.lower) {
         alert("Invalid Response: Your answer falls out of scope")
-        return
+        return false
       }
     }
 
@@ -120,12 +121,12 @@ const QuizComponent = () => {
     if (questionType === "slider") {
       if (ans > question.upper || ans < question.lower) {
         alert("Invalid Response: Your answer falls out of scope")
-        return
+        return false
       }
     }
 
-    setLock(true)
     addNewAnswer(ans)
+    return true
 
   }
 
@@ -154,10 +155,10 @@ const QuizComponent = () => {
           (question.questionType === "dropdown")? <>
           <div className="select-box">
             <select id="answer" placeholder="">
-              <option value={question.option1}>{question.option1}</option>
-              <option value={question.option2}>{question.option2}</option>
-              <option value={question.option3}>{question.option3}</option>
-              <option value={question.option4}>{question.option4}</option>
+              <option value={question.value1}>{question.option1}</option>
+              <option value={question.value2}>{question.option2}</option>
+              <option value={question.value3}>{question.option3}</option>
+              <option value={question.value4}>{question.option4}</option>
             </select>
           </div>
           
