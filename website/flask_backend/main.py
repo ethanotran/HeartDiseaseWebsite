@@ -87,7 +87,10 @@ def input():
 
         prediction1 = models["Ensemble 1"].predict(input_ensemble1)
         prediction2 = models["Ensemble 2"].predict(input_ensemble2)
-        return jsonify("Result: %d and %d " % (prediction1, prediction2))
+
+
+        
+        return jsonify({"value1" : int(prediction1), "value2" : int(prediction2)})
         # if prediction == 0:
         #     return jsonify("Result: our ensemble model does not detect an elevated risk of heart disease.")
         # elif prediction == 1:

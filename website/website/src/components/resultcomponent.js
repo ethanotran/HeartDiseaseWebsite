@@ -33,10 +33,26 @@ Should be no
 */
 const ResultsComponent = () => {
     let location = useLocation();
+
+    let display; 
+    if(location.state.result[0] == 0&&location.state.result[1] == 0)
+    {
+        display = <p>you aren’t at risk of heart disease</p>
+    }
+    else if((location.state.result[0] == 1&&location.state.result[1] == 0)||(location.state.result[0] == 0&&location.state.result[1] == 1))
+    {
+        display = <p>you may have elevated risk of heart disease but here are the concerning inputs</p>
+    }
+    else if(location.state.result[0] == 1 &&location.state.result[1] == 1 )
+    {
+        display = <p>your input indicates significant risk of heart disease</p>
+    }
+        
+
     return (
         <div>
             <h1 className="header-box-info">Results page</h1>
-            <p>{location.state.result}</p>
+            {display}
         </div>
     )
 }
