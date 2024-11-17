@@ -1,4 +1,5 @@
 import {useLocation} from 'react-router-dom'
+import "./resultcomponent.css"
 
 /* Standard Healthy Ranges:
 Pressure High:  {
@@ -35,6 +36,8 @@ const ResultsComponent = () => {
     let location = useLocation();
 
     let display; 
+    let display2 = location.state.result[2]
+    let display3;
     if(location.state.result[0] == 0&&location.state.result[1] == 0)
     {
         display = <p>you aren’t at risk of heart disease</p>
@@ -42,17 +45,73 @@ const ResultsComponent = () => {
     else if((location.state.result[0] == 1&&location.state.result[1] == 0)||(location.state.result[0] == 0&&location.state.result[1] == 1))
     {
         display = <p>you may have elevated risk of heart disease but here are the concerning inputs</p>
+        if(display2[1]== 0)
+        {
+            display2[1] = "male"
+
+        }
+        if(display2[1]== 1)
+        {
+            display2[1] = "female"
+    
+        }
+        if(display2[4]== 0)
+        {
+            display2[4] = "no"
+
+        }
+        if(display2[4]== 1)
+        {
+            display2[4] = "yes"
+    
+        }
+
+        display3 = <div><p>Summary:</p><p> age: {display2[0]}</p><p> gender: {display2[1]}</p><p> chest pain type: {display2[2]}</p><p> maximum heart rate: {display2[3]}</p>
+        <p> exercise induced angina: {display2[4]}</p><p>number of major vessels colored by cardiac fluoroscopy: {display2[5]}</p><p>impulse level: {display2[6]}</p><p> systolic blood pressure: {display2[7]}</p>
+        <p> (CK-MB) level: {display2[8]}</p><p> troponin level: {display2[9]}</p></div>
+       // display2 = location.state.summary
+
     }
     else if(location.state.result[0] == 1 &&location.state.result[1] == 1 )
     {
-        display = <p>your input indicates significant risk of heart disease</p>
+        if(display2[1]== 0)
+        {
+            display2[1] = "male"
+
+        }
+        if(display2[1]== 1)
+        {
+            display2[1] = "female"
+    
+        }
+
+        if(display2[4]== 0)
+        {
+            display2[4] = "no"
+
+        }
+        if(display2[4]== 1)
+        {
+            display2[4] = "yes"
+    
+        }
+    
+        display3 = <div><p>Summary:</p><p> age: {display2[0]}</p><p> gender: {display2[1]}</p><p> chest pain type: {display2[2]}</p><p> maximum heart rate: {display2[3]}</p>
+        <p> exercise induced angina: {display2[4]}</p><p>number of major vessels colored by cardiac fluoroscopy: {display2[5]}</p><p>impulse level: {display2[6]}</p><p> systolic blood pressure: {display2[7]}</p>
+        <p> (CK-MB) level: {display2[8]}</p><p> troponin level: {display2[9]}</p></div>
     }
         
 
     return (
-        <div>
-            <h1 className="header-box-info">Results page</h1>
+        <div className='results'>
+           
             {display}
+            <div className='summary'>
+            {display3}
+            </div>
+            
+            
+
         </div>
     )
 }

@@ -68,7 +68,6 @@ const QuizComponent = () => {
      console.table(...[answers])
       setIndex(0)
       // Here we send the answers array to the backend
-
       axios({method: "POST",
         url: "http://localhost:8090/api/input",
         data: {
@@ -85,11 +84,16 @@ const QuizComponent = () => {
         }
       }).then(function (response) {
 
-        navigate("/results", {state: {result:[response.data.value1,response.data.value2]}, replace:true})
+        navigate("/results", {state: {result:[response.data.value1,response.data.value2,answers]}, replace:true})
+       
+
       })
       .catch(function(error) {
         console.log(error)
       })
+
+      
+
     }
   }
 

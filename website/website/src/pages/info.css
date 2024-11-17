@@ -1,5 +1,6 @@
 .header-box-info {
-    background-color: rgb(255, 254, 254);
+    font-family: "Arial";
+    background-color: transparent;
     color: rgb(0, 0, 0);
     text-align: center;
     padding-top: 15%;
@@ -7,6 +8,36 @@
     height: 300px;
   }
 
-.page1 {
-    background-color: black;
+.header-box-info .generalInfo {
+    font-size: 25px;
+    font-family: "Arial";
+    background-color: transparent;
+    color: rgb(22, 1, 1);
+    text-align: left;
+    margin: 32px;
+    
+}
+
+.symptoms-header {
+  background-size: 12px;
+  transform: translateY(-190px);
+  font-family: "Arial";
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 15%;
+  width: 100%;
+ 
+
+}
+.symptoms-header .symptoms-body{
+  
+  font-size: 25px;
+  font-family: "Arial";
+  background-color: transparent;
+  color: rgb(22, 1, 1);
+  text-align: left;
+  margin: 32px;
+  
+ 
 }
