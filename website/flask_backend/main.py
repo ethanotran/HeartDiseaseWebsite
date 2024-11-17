@@ -39,36 +39,38 @@ def values():
 
     # Example below with actual data from heart.csv where original label is 1
     # (positive for heart disease)
+    ## NOTE! You may need to reorder the raw json with postman, since keys are unordered
+    #  and input expects a certain order
 
-    # return jsonify(
-    #     {
-    #         "age": "63",
-    #         "sex": "1",  # 0 or 1
-    #         "cp": "3",  # 0, 1, 2, or 3
-    #         "thalachh": "150",
-    #         "exng": "0",  # 0 or 1
-    #         "caa": "0",  # 0, 1, 2, 3, or 4
-    #         "impulse": "76",  
-    #         "pressurehight": "109",
-    #         "kcm": "0.665",  
-    #         "troponin": "0.491",
-    #
-    #     }
-
-        # Example below where original label is 0
     return jsonify(
         {
-            "age": "67",
+            "age": "63",
             "sex": "1",  # 0 or 1
-            "cp": "0",  # 0, 1, 2, or 3
-            "thalachh": "108",
-            "exng": "1",  # 0 or 1
-            "caa": "3",  # 0, 1, 2, 3, or 4
-            "impulse": "77",  # 0, 1, 2, or 3
-            "pressurehight": "130",
-            "kcm": "0.44",  # 0 or 1
-            "troponin": "0.52",
+            "cp": "3",  # 0, 1, 2, or 3
+            "thalachh": "150",
+            "exng": "0",  # 0 or 1
+            "caa": "0",  # 0, 1, 2, 3, or 4
+            "impulse": "76",
+            "pressurehight": "109",
+            "kcm": "0.665",
+            "troponin": "0.491",
+
         }
+
+        # Example below where original label is 0
+    # return jsonify(
+    #     {
+    #         "age": "67",
+    #         "sex": "1",  # 0 or 1
+    #         "cp": "0",  # 0, 1, 2, or 3
+    #         "thalachh": "108",
+    #         "exng": "1",  # 0 or 1
+    #         "caa": "3",  # 0, 1, 2, 3, or 4
+    #         "impulse": "66",  # 0, 1, 2, or 3
+    #         "pressurehight": "160",
+    #         "kcm": "1.8",  # 0 or 1
+    #         "troponin": "0.012",
+    #     }
     )
 
 @app.route("/api/input",methods = ["POST"])
@@ -76,16 +78,20 @@ def input():
         json_dict = request.get_json()
         #convert string values to ints
         for key in json_dict:
-            json_dict[key] = int(json_dict[key])
+            json_dict[key] = float(json_dict[key])
 
         input = np.array(list(json_dict.values()))
         input = input.reshape(1, -1)
+        input_ensemble1 = input[:, [0, 1, 6, 7, 8, 9]]
+        input_ensemble2 = input[:, [0, 1, 2, 3, 4, 5]]
 
-        prediction = models["Ensemble"].predict(input)
-        if prediction == 0:
-            return jsonify("Result: our ensemble model does not detect an elevated risk of heart disease.")
-        elif prediction == 1:
-            return jsonify("Result: our ensemble model detects an elevated risk of heart disease.")
+        prediction1 = models["Ensemble 1"].predict(input_ensemble1)
+        prediction2 = models["Ensemble 2"].predict(input_ensemble2)
+        return jsonify("Result: %d and %d " % (prediction1, prediction2))
+        # if prediction == 0:
+        #     return jsonify("Result: our ensemble model does not detect an elevated risk of heart disease.")
+        # elif prediction == 1:
+        #     return jsonify("Result: our ensemble model detects an elevated risk of heart disease.")
 
 def trainModels():
     root_dir = Path(__file__).resolve().parent.parent.parent
@@ -129,7 +135,7 @@ def trainModels():
         model.fit(X_train_1, y_train_1)
         models1[i.__name__] = model
         
-    ensemble_model1 = VotingClassifier(estimators=[('rf', models1['RandomForestClassifier']),('dt', models1['DecisionTreeClassifier,']),
+    ensemble_model1 = VotingClassifier(estimators=[('rf', models1['RandomForestClassifier']),('dt', models1['DecisionTreeClassifier']),
     ('gb', models1['GradientBoostingClassifier']), ('ab', models1['AdaBoostClassifier'])])
     X_train_1, X_test_1, y_train_1, y_test_1 = train_test_split(df1, labels_1, test_size=0.2)
     ensemble_model1 = ensemble_model1.fit(X_train_1, y_train_1)
@@ -162,16 +168,6 @@ def trainModels():
     ensembles['Ensemble 2'] = ensemble_model2
     
     return ensembles
-
-
-@app.route("/api/example", methods=['POST'])
-def example():
-    return jsonify({"Result": "your data " + request.form['age'] +
-    request.form['gender']  + request.form['impulseLevel'] + request.form['systolicBlood'] +
-    request.form['diastolicBlood'] + request.form['glucoseLevel'] + request.form['kcmLevel?'] +
-    request.form['troponinLevel?'] + request.form['class'] })
-
-
 
 if __name__ == "__main__":
     models = trainModels()
