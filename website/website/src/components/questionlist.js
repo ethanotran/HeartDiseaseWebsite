@@ -12,69 +12,91 @@ export const data = [
     question: "What is your sex?",
     option1: "male",
     option2: "female",
+    option3: "other",
+    option4: "prefer not to answer",
+    value1: 0,
+    value2: 1,
+    value3: null,
+    value4: null
   },
   
-    {
+  {
+    questionType: "dropdown",
     question: "What is your chest pain type?",
-    dataType: "number",
-    upper: 3,
-    lower: 0
+    option1: "typical angina",
+    option2: "atypical angina",
+    option3: "non-anginal pain",
+    option4: "asymptomatic",
+    value1: 0,
+    value2: 1,
+    value3: 2,
+    value4: 3
   },
 
   {
+    questionType: "input",
     question: "What is your maximum heart rate?",
-    dataType: "number",
-    upper: 210,
+    type: "number",
+    upper: 220,
     lower: 0
   },
 
   {
+    questionType: "dropdown",
     question: "Do you have exercise induced angina?",
     dataType: "number",
-    upper: 1,
-    lower: 0
+    option1: "yes",
+    option2: "no",
+    option3: "unknown",
+    option4: "prefer not to answer",
+    value1: 1,
+    value2: 0,
+    value3: null,
+    value4: null
   },
 
   {
+    questionType: "dropdown",
     question: "What was the number of major vessels colored by cardiac fluoroscopy?",
-    dataType: "number",
-    upper: 3,
-    lower: 0
+    option1: "0",
+    option2: "1",
+    option3: "2",
+    option4: "3",
+    value1: 0,
+    value2: 1,
+    value3: 2,
+    value4: 3
   },
 
   {
-    questionType: "slider",
-    question: "What is your impulse level? (Impulse refers to the number of times your heart beats per minute at rest, usually within 60-100 times for the average adult)",
+    questionType: "input",
+    question: "What is your impulse level? (Impulse refers to the number of times your heart beats per minute, usually within 60-100 times for the average adult)",
     type: "number",
     upper: 120,
     lower: 30,
-    step: 1
   },
 
   {
-    questionType: "slider",
+    questionType: "input",
     question: "What is your systolic blood pressure? (Top number)",
-    type: "range",
-    upper: 150,
-    lower: 0,
-    step: 1
+    type: "number",
+    upper: 250,
+    lower: 70,
   },
 
   {
-    questionType: "slider",
+    questionType: "input",
     question: "What is your Creatinie Kinase MB (CK-MB) level? ",
-    type: "range",
+    type: "number",
     upper: 300,
     lower: 0,
-    step: 5
   },
 
   {
-    questionType: "slider",
-    question: "What is your troponin level? ",
+    questionType: "input",
+    question: "What is your troponin level? (Troponin appears in the blood stream when the heart has been damaged, indicating previous damage to the heart)",
     type: "number",
     upper: 15,
-    lower: 0,
-
+    lower: 0
   },
 ]
