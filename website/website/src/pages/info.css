@@ -37,7 +37,69 @@
   background-color: transparent;
   color: rgb(22, 1, 1);
   text-align: left;
-  margin: 32px;
-  
+  margin: 32px; 
  
+}
+.prevention-header 
+{
+  font-size: 20px;
+  font-family: "Arial";
+  transform: translateY(-390px);
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 15%;
+  width: 100%;
+}
+
+.prevention-header .body
+{
+  font-size: 25px;
+  font-family: "Arial";
+  background-color: transparent;
+  color: rgb(22, 1, 1);
+  text-align: left;
+  margin: 32px; 
+}
+.healty-diet-header 
+{
+  font-size: 20px;
+  font-family: "Arial";
+  transform: translateY(-490px);
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 15%;
+  width: 100%;
+}
+
+.healty-diet-header .body
+{
+  font-size: 25px;
+  font-family: "Arial";
+  background-color: transparent;
+  color: rgb(22, 1, 1);
+  text-align: left;
+  margin: 32px; 
+}
+.healty-lifestyle-header
+{
+  font-size: 20px;
+  font-family: "Arial";
+  transform: translateY(-600px);
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 15%;
+  width: 100%;
+}
+
+.healty-lifestyle-header .body
+{
+  font-size: 25px;
+  font-family: "Arial";
+  background-color: transparent;
+  color: rgb(22, 1, 1);
+  text-align: left;
+  margin: 32px; 
 }

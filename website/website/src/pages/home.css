@@ -83,12 +83,15 @@
 
 .statistics {
   font-family: "Arial";
+  transform: translateX(-20px);
   column-count: 2;
   font-size: larger;
 }
 
 .statistics .bodytext {
   font-size: larger;
+  
+
   color: rgb(0, 0, 0);
    
  }
