@@ -16,7 +16,14 @@
     font-size: medium;
     color: rgb(255, 255, 255);
     text-align: left;
-    transform: translate(500px,50px);
+    transform: translate(450px,50px);
     
 
+}
+.results .normal-ranges
+{
+    font-size: medium;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    transform: translate(900px,-325px); 
 }

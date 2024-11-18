@@ -115,6 +115,11 @@ const ResultsComponent = () => {
             {display}
             <div className='summary'>
             {display3}
+
+            </div>
+            <div className='normal-ranges'>
+            {display4}
+
             </div>
             
             
