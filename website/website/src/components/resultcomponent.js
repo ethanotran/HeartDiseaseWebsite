@@ -38,13 +38,17 @@ const ResultsComponent = () => {
     let display; 
     let display2 = location.state.result[2]
     let display3;
+    let display4;
     if(location.state.result[0] == 0&&location.state.result[1] == 0)
     {
-        display = <p>you aren’t at risk of heart disease</p>
+        display = <p>You are not at risk of heart disease. The inputs you entered are within the healthy ranges</p>
     }
     else if((location.state.result[0] == 1&&location.state.result[1] == 0)||(location.state.result[0] == 0&&location.state.result[1] == 1))
     {
-        display = <p>you may have elevated risk of heart disease but here are the concerning inputs</p>
+        display = <p>You may be at risk of heart disease; here is a list of healthy ranges to compare with your inputs </p>
+        display4 = <div><p> Healthy Ranges</p><p> maximum heart rate: 220 - Your Age</p><p>Impulse: 60-100 bpm</p><p> Systolic Blood Pressure: 90-120 mmHG</p>
+        <p> (CK-MB) level: 5-25 IU/L</p><p> troponin level: less than 0.04ng/mL</p></div>
+
         if(display2[1]== 0)
         {
             display2[1] = "male"
@@ -66,7 +70,7 @@ const ResultsComponent = () => {
     
         }
 
-        display3 = <div><p>Summary:</p><p> age: {display2[0]}</p><p> gender: {display2[1]}</p><p> chest pain type: {display2[2]}</p><p> maximum heart rate: {display2[3]}</p>
+        display3 = <div><p>Summary of Your Input:</p><p> age: {display2[0]}</p><p> gender: {display2[1]}</p><p> chest pain type: {display2[2]}</p><p> maximum heart rate: {display2[3]}</p>
         <p> exercise induced angina: {display2[4]}</p><p>number of major vessels colored by cardiac fluoroscopy: {display2[5]}</p><p>impulse level: {display2[6]}</p><p> systolic blood pressure: {display2[7]}</p>
         <p> (CK-MB) level: {display2[8]}</p><p> troponin level: {display2[9]}</p></div>
        // display2 = location.state.summary
@@ -74,6 +78,9 @@ const ResultsComponent = () => {
     }
     else if(location.state.result[0] == 1 &&location.state.result[1] == 1 )
     {
+        display = <p>Your input indicates an elevated risk of heart disease; here is a list of healthy ranges to compare with your inputs </p>
+        display4 = <div><p> Healthy Ranges</p><p> maximum heart rate: 220 - Your Age</p><p>Impulse: 60-100 bpm</p><p> Systolic Blood Pressure: 90-120 mmHG</p>
+        <p> (CK-MB) level: 5-25 IU/L</p><p> troponin level: less than 0.04ng/mL</p></div>
         if(display2[1]== 0)
         {
             display2[1] = "male"
@@ -96,7 +103,7 @@ const ResultsComponent = () => {
     
         }
     
-        display3 = <div><p>Summary:</p><p> age: {display2[0]}</p><p> gender: {display2[1]}</p><p> chest pain type: {display2[2]}</p><p> maximum heart rate: {display2[3]}</p>
+        display3 = <div><p>Summary of your Input:</p><p> age: {display2[0]}</p><p> gender: {display2[1]}</p><p> chest pain type: {display2[2]}</p><p> maximum heart rate: {display2[3]}</p>
         <p> exercise induced angina: {display2[4]}</p><p>number of major vessels colored by cardiac fluoroscopy: {display2[5]}</p><p>impulse level: {display2[6]}</p><p> systolic blood pressure: {display2[7]}</p>
         <p> (CK-MB) level: {display2[8]}</p><p> troponin level: {display2[9]}</p></div>
     }
