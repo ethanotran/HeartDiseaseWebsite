@@ -22,6 +22,7 @@ const QuizComponent = () => {
   let [index, setIndex] = useState(0)
   let [question, setQuestion] = useState(data[index])
   let [finish, setFinish] = useState(false)
+  let [isHovered, setIsHovered] = useState(false)
   let [answers, setAnswers] = useState([])
   let [questionType, setQuestionType] = useState(data[index].questionType)
   let bar = document.getElementById("bar")
@@ -148,9 +149,17 @@ const QuizComponent = () => {
               <div id="bar" >{Math.round((index / data.length) * 100)}%</div>
             </div>
           </div>
-          <h2>{question.question}</h2>
-          {
+          <div>
+            <h2>{question.question}
+              <div className="tooltip-container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+              <span class="material-symbols-outlined">help</span>
+                {isHovered && <div className="tooltip">{question.tooltip}</div>}
+              </div>
+            </h2>
+              
+          </div>
           
+          {
           // Checks the type of question and print the appropriate html format
           (question.questionType === "dropdown")? <>
           <div className="select-box">
