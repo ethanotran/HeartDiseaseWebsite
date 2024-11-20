@@ -24,6 +24,7 @@ const QuizComponent = () => {
   let [finish, setFinish] = useState(false)
   let [isHovered, setIsHovered] = useState(false)
   let [answers, setAnswers] = useState([])
+  let [lock, setLock] = useState(false)
   let [questionType, setQuestionType] = useState(data[index].questionType)
   let bar = document.getElementById("bar")
   const navigate = useNavigate()
@@ -62,7 +63,6 @@ const QuizComponent = () => {
   }
 
   const isFinished = () => {
-    
     bar.style.width = `${(index / data.length) * 100}%`
     setFinish(true)
     console.table(...[answers])
@@ -75,13 +75,13 @@ const QuizComponent = () => {
         "age": answers[0],
         "gender": answers[1],
         "cp": answers[2],
-        "trtbps": answers[3],
-        "chol": answers[4],
-        "fbs": answers[5],
-        "restecg": answers[6],
-        "thalachh": answers[7],
-        "exng": answers[8],
-        "caa": answers[9]
+        "thalachh": answers[3],
+        "exng": answers[4],
+        "caa": answers[5],
+        "impulse": answers[6],
+        "pressurehigh": answers[7],
+        "kcm": answers[8],
+        "troponin": answers[9]
       }
     }).then(function (response) {
       navigate("/results", {state: {result:response.data}, replace:true})
@@ -89,7 +89,6 @@ const QuizComponent = () => {
     .catch(function(error) {
       console.log(error)
     })
-    
   }
 
   const previousQuestion = () => {
@@ -125,7 +124,6 @@ const QuizComponent = () => {
         return false
       }
     }
-
     addNewAnswer(ans)
     return true
 
