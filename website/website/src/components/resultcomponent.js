@@ -59,6 +59,28 @@ const ResultsComponent = () => {
             display2[1] = "female"
     
         }
+
+        if(display2[2]== 0)
+        {
+            display2[2] = "typical angina"
+
+        }
+        if(display2[2]== 1)
+        {
+            display2[2] = "atypical angina"
+    
+        }
+        if(display2[2]== 2)
+        {
+            display2[2] = "non-anginal pain"
+
+        }
+        if(display2[2]== 3)
+        {
+            display2[2] = "asymptomatic"
+    
+        }
+    
         if(display2[4]== 0)
         {
             display2[4] = "no"
@@ -70,11 +92,42 @@ const ResultsComponent = () => {
     
         }
 
-        display3 = <div><p>Summary of Your Input:</p><p> age: {display2[0]}</p><p> gender: {display2[1]}</p><p> chest pain type: {display2[2]}</p><p> maximum heart rate: {display2[3]}</p>
-        <p> exercise induced angina: {display2[4]}</p><p>number of major vessels colored by cardiac fluoroscopy: {display2[5]}</p><p>impulse level: {display2[6]}</p><p> systolic blood pressure: {display2[7]}</p>
-        <p> (CK-MB) level: {display2[8]}</p><p> troponin level: {display2[9]}</p></div>
-       // display2 = location.state.summary
+        let age = <p> age: {display2[0]}</p>
+        let gender = <p> gender: {display2[1]}</p>
+        let cp =  <p> chest pain type: {display2[2]}</p>
+        let mhr = <p> maximum heart rate: {display2[3]}</p>
+        let exInduceAngina = <p> exercise induced angina: {display2[4]}</p>
+        let numberMajorVassels  = <p>number of major vessels colored by cardiac fluoroscopy: {display2[5]}</p>
+        let impulseLevel = <p>impulse level: {display2[6]}</p>
+        let sbp = <p> systolic blood pressure: {display2[7]}</p>
+        let ckMbLevel = <p> (CK-MB) level: {display2[8]}</p>
+        let tL = <p> troponin level: {display2[9]}</p>
+        if(display2[3] >= 220)
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
+        }
 
+        if(display2[6] < 60 || display2[6]> 100)
+        {
+            impulseLevel = <p style={{ color: 'red' }}>impulse level: {display2[6]}</p>
+        }
+
+        if(display2[7]<90||display2[7]>120)
+        {
+            sbp = <p style={{ color: 'red' }}> systolic blood pressure: {display2[7]}</p>
+        }
+
+        if(display2[8]<5||display2[8]>25)
+        {
+            ckMbLevel = <p style={{ color: 'red' }}> (CK-MB) level: {display2[8]}</p>  
+        }
+        if(display2[8] >= 0.04)
+        {
+            tL = <p style={{ color: 'red' }}> troponin level: {display2[9]}</p> 
+        }
+    
+        display3 = <div><p style={{ color: 'white' }}>Summary of your Input:</p>{age}{gender}{cp}{mhr}{exInduceAngina}{numberMajorVassels}
+        {impulseLevel}{sbp}{ckMbLevel}{tL}</div>
     }
     else if(location.state.result[0] == 1 &&location.state.result[1] == 1 )
     {
@@ -92,6 +145,27 @@ const ResultsComponent = () => {
     
         }
 
+        if(display2[2]== 0)
+        {
+            display2[2] = "typical angina"
+
+        }
+        if(display2[2]== 1)
+        {
+            display2[2] = "atypical angina"
+    
+        }
+        if(display2[2]== 2)
+        {
+            display2[2] = "non-anginal pain"
+
+        }
+        if(display2[2]== 3)
+        {
+            display2[2] = "asymptomatic"
+    
+        }
+
         if(display2[4]== 0)
         {
             display2[4] = "no"
@@ -102,10 +176,47 @@ const ResultsComponent = () => {
             display2[4] = "yes"
     
         }
-    
-        display3 = <div><p>Summary of your Input:</p><p> age: {display2[0]}</p><p> gender: {display2[1]}</p><p> chest pain type: {display2[2]}</p><p> maximum heart rate: {display2[3]}</p>
-        <p> exercise induced angina: {display2[4]}</p><p>number of major vessels colored by cardiac fluoroscopy: {display2[5]}</p><p>impulse level: {display2[6]}</p><p> systolic blood pressure: {display2[7]}</p>
-        <p> (CK-MB) level: {display2[8]}</p><p> troponin level: {display2[9]}</p></div>
+        
+        let age = <p> age: {display2[0]}</p>
+        let gender = <p> gender: {display2[1]}</p>
+        let cp =  <p> chest pain type: {display2[2]}</p>
+        let mhr = <p> maximum heart rate: {display2[3]}</p>
+        let exInduceAngina = <p> exercise induced angina: {display2[4]}</p>
+        let numberMajorVassels  = <p>number of major vessels colored by cardiac fluoroscopy: {display2[5]}</p>
+        let impulseLevel = <p>impulse level: {display2[6]}</p>
+        let sbp = <p> systolic blood pressure: {display2[7]}</p>
+        let ckMbLevel = <p> (CK-MB) level: {display2[8]}</p>
+        let tL = <p> troponin level: {display2[9]}</p>
+
+        if(display2[3] >= 220)
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
+        }
+
+        if(display2[6] < 60 || display2[6]> 100)
+        {
+            impulseLevel = <p style={{ color: 'red' }}>impulse level: {display2[6]}</p>
+        }
+
+        if(display2[7]<90||display2[7]>120)
+        {
+            sbp = <p style={{ color: 'red' }}> systolic blood pressure: {display2[7]}</p>
+        }
+
+        if(display2[8]<5||display2[8]>25)
+        {
+            ckMbLevel = <p style={{ color: 'red' }}> (CK-MB) level: {display2[8]}</p>  
+        }
+        if(display2[8] >= 0.04)
+        {
+            tL = <p style={{ color: 'red' }}> troponin level: {display2[9]}</p> 
+        }
+
+
+        display3 = <div><p style={{ color: 'white' }}>Summary of your Input:</p>{age}{gender}{cp}{mhr}{exInduceAngina}{numberMajorVassels}{impulseLevel}
+        {sbp}{ckMbLevel}{tL}</div>
+
+      
     }
         
 

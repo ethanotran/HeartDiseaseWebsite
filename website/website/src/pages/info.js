@@ -61,12 +61,18 @@ export default function Info() {
       <div className="healty-lifestyle-header">
           <h3>Healthy lifestyle</h3>
           <div className="body">
-        <p>Regular exercise is recommended to keep healthy. It is recommended to do at least 2:30 hours of constant exercise every week or 30 min per day. This will help prevent the development of any heart condition by keeping your weight, sugar in blood and blood pressure in check. Keeping your weight in check is important because being overweight puts stress on your heart and blood vessels which can develop heart diseases.
+        <p>Regular exercise is recommended to keep healthy. It is recommended to do at least 2:30 hours of constant exercise every week or 30 min per day. 
+          This will help prevent the development of any heart condition by keeping your weight, sugar in blood and blood pressure in check. 
+          Keeping your weight in check is important because being overweight puts stress on your heart and blood vessels which can develop heart diseases.
         </p>
-        <p>Avoid the consumption of cigarettes because these ones are related with the development of heart diseases. Also keeping a good sleep schedule is recommended not just to prevent heart conditions but other illnesses. Between 7 to 9 hours is recommended for adults to keep a healthy sleeping schedule. If possible try to reduce mental stress. Any mental practice is recommended to doing so. 
+        <p>Avoid the consumption of cigarettes because these ones are related with the development of heart diseases.
+           Also keeping a good sleep schedule is recommended not just to prevent heart conditions but other illnesses.
+            Between 7 to 9 hours is recommended for adults to keep a healthy sleeping schedule. If possible try to reduce mental stress. 
+            Any mental practice is recommended to doing so. 
         </p>
-        <p>Remember to always check your health with a specialized health team. It is important to be aware of your health and check on your medication even more if your conditions have a relation with heart disease. For example, diabetes is a factor that increases the risk of heart disease so it is important to keep your diabetes medication in check and doing regular visits to your primary doctor. 
-
+        <p>Remember to always check your health with a specialized health team.
+           It is important to be aware of your health and check on your medication even more if your conditions have a relation with heart disease. For example,
+            diabetes is a factor that increases the risk of heart disease so it is important to keep your diabetes medication in check and doing regular visits to your primary doctor. 
         </p>
        
           </div>
