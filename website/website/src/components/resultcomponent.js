@@ -102,10 +102,53 @@ const ResultsComponent = () => {
         let sbp = <p> systolic blood pressure: {display2[7]}</p>
         let ckMbLevel = <p> (CK-MB) level: {display2[8]}</p>
         let tL = <p> troponin level: {display2[9]}</p>
-        if(display2[3] >= 220)
+        
+        if(display2[3] > 200 && display2[0] >= 20)
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
         }
+        else if (display2[3] > 190 && (display2[0] >= 30))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+        else if (display2[3] > 185 && (display2[0] >= 35))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+        else if (display2[3] > 180 && (display2[0] >= 40))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+        else if (display2[3] > 175 && (display2[0] >= 45))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+        else if (display2[3] > 170 && (display2[0] >= 50))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+        else if (display2[3] > 165 && (display2[0] >= 55))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+        else if (display2[3] > 160 && (display2[0] >= 60))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+        else if (display2[3] > 155 && (display2[0] >= 65))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+        else if (display2[3] > 150 && (display2[0] >= 70))
+        {
+            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+        }
+
+    
+
+            
+
+
 
         if(display2[6] < 60 || display2[6]> 100)
         {
@@ -188,10 +231,46 @@ const ResultsComponent = () => {
         let ckMbLevel = <p> (CK-MB) level: {display2[8]}</p>
         let tL = <p> troponin level: {display2[9]}</p>
 
-        if(display2[3] >= 220)
-        {
-            mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
-        }
+        if(display2[3] > 200 && display2[0] >= 20)
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
+            }
+            else if (display2[3] > 190 && (display2[0] >= 30))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
+            else if (display2[3] > 185 && (display2[0] >= 35))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
+            else if (display2[3] > 180 && (display2[0] >= 40))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
+            else if (display2[3] > 175 && (display2[0] >= 45))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
+            else if (display2[3] > 170 && (display2[0] >= 50))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
+            else if (display2[3] > 165 && (display2[0] >= 55))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
+            else if (display2[3] > 160 && (display2[0] >= 60))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
+            else if (display2[3] > 155 && (display2[0] >= 65))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
+            else if (display2[3] > 150 && (display2[0] >= 70))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+            }
 
         if(display2[6] < 60 || display2[6]> 100)
         {
