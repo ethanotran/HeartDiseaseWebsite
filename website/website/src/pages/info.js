@@ -5,41 +5,40 @@ export default function Info() {
   return(
     <div>
       <NavBar/>
-      <div className="header-box-info">
-      <h1>What is Heart Disease? 
-      </h1>
-      <div className="generalInfo">
+      <div className="page-header">
+        <h1>Heart Diseases, General Info and Prevention</h1>
+  
+        </ div>
+        <div className="body-color">
+     < div className = "body-text">
+      
+      <h2 className="titles" >What is Heart Disease? 
+      </h2>
+    
         <p>Heart disease in general refers to multiple conditions that affect the heart. 
           For example, the most common type of heart disease in the US is Coronary Heart Disease, 
           a condition where the heart’s arteries become narrow or clogged, reducing blood flow to the heart. 
           Heart diseases belong to the greater family of Cardiovascular Diseases (CVDs): disorders which primarily affect the heart and its blood vessels. 
           CVDs take the lives of more than 17 million people around the world each year.</p>
-      </div>
-        </div>
-        <div className="symptoms-header">
-          <h2>Which are the general symptoms ?</h2>
-          <div className="symptoms-body">
+    
+
+          <h2 className="titles">Which are the General Symptoms ?</h2>
+        
         <p>Symptoms vary depending on the heart disease. 
           However, the most common symptoms generally include chest pain, shortness in breath, pain in arms/shoulders, weakness and fatigue. 
           Some conditions, like arrhythmia (irregular heart beats) can cause symptoms such as dizziness, elevated/slow heartbeats, lightheadedness, and some form of chest pain or discomfort. 
           It is important to identify the symptoms fast so action can be taken.</p>
-      </div>
 
 
-          </div>  
+          <h2 className="titles">How to Prevent Heart Disease? </h2>
 
-          <div className="prevention-header">
-          <h3>How to prevent heart disease? </h3>
-          <div className="body">
         <p>Having a healthy lifestyle is a good way of preventing any kind of heart disease from developing. Good diet, exercise and good sleep are a good start point for this.
         </p>
-          </div>
-      </div>  
-
+     
       
-          <div className="healty-diet-header">
-          <h3>Healthy diet</h3>
-          <div className="body">
+
+          <h2 className="titles">Healthy Diet</h2>
+ 
         <p>Having a good balance between your meals contributes to preventing a healthy lifestyle and keeping your heart healthy. </p>
         <p>high saturated and trans fats are a contributor for the development of heart conditions, it is good to reduce their consumption to as little as possible. 
           This does not mean that all fats are bad, some dairy based foods and non-tropical fats like olive oil, avocados or oily fish in moderation do not increase the risk of heart diseases. 
@@ -55,12 +54,9 @@ export default function Info() {
           Foods like cereals that have high glycaemic index (GI) should be reduced due to its relation with increasing levels of sugar. 
            Also, whole grain foods and low glycaemic index (GI), like rice, pasta or tortillas, can be consumed on a more regular basis. 
         </p>
-          </div>
-      </div> 
 
-      <div className="healty-lifestyle-header">
-          <h3>Healthy lifestyle</h3>
-          <div className="body">
+          <h2 className="titles" >Healthy Lifestyle</h2>
+
         <p>Regular exercise is recommended to keep healthy. It is recommended to do at least 2:30 hours of constant exercise every week or 30 min per day. 
           This will help prevent the development of any heart condition by keeping your weight, sugar in blood and blood pressure in check. 
           Keeping your weight in check is important because being overweight puts stress on your heart and blood vessels which can develop heart diseases.
@@ -74,10 +70,8 @@ export default function Info() {
            It is important to be aware of your health and check on your medication even more if your conditions have a relation with heart disease. For example,
             diabetes is a factor that increases the risk of heart disease so it is important to keep your diabetes medication in check and doing regular visits to your primary doctor. 
         </p>
-       
-          </div>
-      </div> 
-
+        </div>
+        </div>
 
     </div>
   )
