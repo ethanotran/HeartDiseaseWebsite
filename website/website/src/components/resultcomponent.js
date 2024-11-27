@@ -436,12 +436,12 @@ const ResultsComponent = () => {
             {display5}
             {display1}
             {display6}
-            {display7}
-            {display8}
-            {display9}
             {display11}
+            {display7}
             {display12}
+            {display8}
             {display13}
+            {display9}           
             {display14}
 
             </div>
