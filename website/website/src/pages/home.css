@@ -79,6 +79,7 @@
  border-radius: 10%;
  height: 40px;
  width: 100px;
+ transform: translateY(15px);
 }
 
 .statistics {
@@ -90,14 +91,14 @@
 
 .statistics .bodytext {
   font-size: larger;
-  
+  transform: translate(35px,10px);
 
   color: rgb(0, 0, 0);
    
  }
 
 .statistics .more {
- transform: translateY(20px);
+ transform: translate(35px,30px);
  font-size: large;
  background-color: black;
  color: white;

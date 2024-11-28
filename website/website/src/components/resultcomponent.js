@@ -110,65 +110,65 @@ const ResultsComponent = () => {
         let ckMbLevel = <p> (CK-MB) level: {display2[8]}</p>
         let tL = <p> troponin level: {display2[9]}</p>
         
-        if(display2[3] > 200 && display2[0] >= 20)
+        if(display2[3] < 178 && display2[0] >= 20)
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
-            display5 = <p> Your maximum heart rate is greater than 200 bpm (beats per minute), the maximum healthy limit in your case </p>
+            display5 = <p> Your maximum heart rate is less than 178 bpm (beats per minute), the minimum healthy limit in your case </p>
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
         }
-        else if (display2[3] > 190 && (display2[0] >= 30))
+        else if (display2[3] < 168 && (display2[0] >= 30))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-            display5 = <p> Your maximum heart rate is greater than 190 bpm (beats per minute), the maximum healthy limit in your case </p>
+            display5 = <p> Your maximum heart rate is less than 168 bpm (beats per minute), the minimum healthy limit in your case </p>
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
 
         }
-        else if (display2[3] > 185 && (display2[0] >= 35))
+        else if (display2[3] < 163 && (display2[0] >= 35))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
-            display5 = <p> Your maximum heart rate is greater than 185 bpm (beats per minute), the maximum healthy limit in your case </p> 
+            display5 = <p> Your maximum heart rate is less than 163 bpm (beats per minute), the minimum healthy limit in your case </p> 
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
         }
-        else if (display2[3] > 180 && (display2[0] >= 40))
+        else if (display2[3] < 158 && (display2[0] >= 40))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-            display5 = <p> Your maximum heart rate is greater than 180 bpm (beats per minute), the maximum healthy limit in your case </p>
+            display5 = <p> Your maximum heart rate is less than 158 bpm (beats per minute), the minimum healthy limit in your case </p>
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p> 
         }
-        else if (display2[3] > 175 && (display2[0] >= 45))
+        else if (display2[3] < 153 && (display2[0] >= 45))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-            display5 = <p> Your maximum heart rate is greater than 175 bpm (beats per minute), the maximum healthy limit in your case </p> 
+            display5 = <p> Your maximum heart rate is less than 153 bpm (beats per minute), the minimum healthy limit in your case </p> 
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
         }
-        else if (display2[3] > 170 && (display2[0] >= 50))
+        else if (display2[3] < 148 && (display2[0] >= 50))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-            display5 = <p> Your maximum heart rate is greater than 170 bpm (beats per minute), the maximum healthy limit in your case </p> 
+            display5 = <p> Your maximum heart rate is less than 148 bpm (beats per minute), the minimum healthy limit in your case </p> 
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
         }
-        else if (display2[3] > 165 && (display2[0] >= 55))
+        else if (display2[3] < 143 && (display2[0] >= 55))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-            display5 = <p> Your maximum heart rate is greater than 165 bpm (beats per minute), the maximum healthy limit in your case </p>
+            display5 = <p> Your maximum heart rate is less than 143 bpm (beats per minute), the minimum healthy limit in your case </p>
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p> 
         }
-        else if (display2[3] > 160 && (display2[0] >= 60))
+        else if (display2[3] < 138 && (display2[0] >= 60))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-            display5 = <p> Your maximum heart rate is greater than 160 bpm (beats per minute), the maximum healthy limit in your case </p> 
+            display5 = <p> Your maximum heart rate is less than 138 bpm (beats per minute), the minimum healthy limit in your case </p> 
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
         }
-        else if (display2[3] > 155 && (display2[0] >= 65))
+        else if (display2[3] < 133 && (display2[0] >= 65))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
-            display5 = <p> Your maximum heart rate is greater than 155 bpm (beats per minute), the maximum healthy limit in your case </p>  
+            display5 = <p> Your maximum heart rate is less than 133 bpm (beats per minute), the minimum healthy limit in your case </p>  
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
         }
-        else if (display2[3] > 150 && (display2[0] >= 70))
+        else if (display2[3] < 128 && (display2[0] >= 70))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
-            display5 = <p> Your maximum heart rate is greater than 150 bpm (beats per minute), the maximum healthy limit in your case </p>  
+            display5 = <p> Your maximum heart rate is less than 150 bpm (beats per minute), the minimum healthy limit in your case </p>  
             display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
         }
 
@@ -296,67 +296,70 @@ const ResultsComponent = () => {
         let ckMbLevel = <p> (CK-MB) level: {display2[8]}</p>
         let tL = <p> troponin level: {display2[9]}</p>
 
-        if(display2[3] > 200 && display2[0] >= 20)
+        if(display2[3] < 178 && display2[0] >= 20)
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
-                display5 = <p> Your maximum heart rate is greater than 200 bpm (beats per minute), the maximum healthy limit in your case </p>
+                display5 = <p> Your maximum heart rate is less than 178 bpm (beats per minute), the minimum healthy limit in your case </p>
                 display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
             }
-            else if (display2[3] > 190 && (display2[0] >= 30))
+            else if (display2[3] < 168 && (display2[0] >= 30))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-                display5 = <p> Your maximum heart rate is greater than 190 bpm (beats per minute), the maximum healthy limit in your case </p>
+                display5 = <p> Your maximum heart rate is less than 168 bpm (beats per minute), the minimum healthy limit in your case </p>
                 display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+    
             }
-            else if (display2[3] > 185 && (display2[0] >= 35))
+            else if (display2[3] < 163 && (display2[0] >= 35))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
-                display5 = <p> Your maximum heart rate is greater than 185 bpm (beats per minute), the maximum healthy limit in your case </p> 
+                display5 = <p> Your maximum heart rate is less than 163 bpm (beats per minute), the minimum healthy limit in your case </p> 
                 display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
             }
-            else if (display2[3] > 180 && (display2[0] >= 40))
+            else if (display2[3] < 158 && (display2[0] >= 40))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-                display5 = <p> Your maximum heart rate is greater than 180 bpm (beats per minute), the maximum healthy limit in your case </p>
+                display5 = <p> Your maximum heart rate is less than 158 bpm (beats per minute), the minimum healthy limit in your case </p>
+                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p> 
+            }
+            else if (display2[3] < 153 && (display2[0] >= 45))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+                display5 = <p> Your maximum heart rate is less than 153 bpm (beats per minute), the minimum healthy limit in your case </p> 
                 display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
             }
-            else if (display2[3] > 175 && (display2[0] >= 45))
+            else if (display2[3] < 148 && (display2[0] >= 50))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+                display5 = <p> Your maximum heart rate is less than 148 bpm (beats per minute), the minimum healthy limit in your case </p> 
+                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            }
+            else if (display2[3] < 143 && (display2[0] >= 55))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+                display5 = <p> Your maximum heart rate is less than 143 bpm (beats per minute), the minimum healthy limit in your case </p>
+                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p> 
+            }
+            else if (display2[3] < 138 && (display2[0] >= 60))
+            {
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
+                display5 = <p> Your maximum heart rate is less than 138 bpm (beats per minute), the minimum healthy limit in your case </p> 
+                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            }
+            else if (display2[3] < 133 && (display2[0] >= 65))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
-                display5 = <p> Your maximum heart rate is greater than 175 bpm (beats per minute), the maximum healthy limit in your case </p> 
+                display5 = <p> Your maximum heart rate is less than 133 bpm (beats per minute), the minimum healthy limit in your case </p>  
                 display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
             }
-            else if (display2[3] > 170 && (display2[0] >= 50))
+            else if (display2[3] < 128 && (display2[0] >= 70))
             {
-                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-                display5 = <p> Your maximum heart rate is greater than 170 bpm (beats per minute), the maximum healthy limit in your case </p>
+                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
+                display5 = <p> Your maximum heart rate is less than 150 bpm (beats per minute), the minimum healthy limit in your case </p>  
                 display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
             }
-            else if (display2[3] > 165 && (display2[0] >= 55))
-            {
-                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-                display5 = <p> Your maximum heart rate is greater than 165 bpm (beats per minute), the maximum healthy limit in your case </p>
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
-            }
-            else if (display2[3] > 160 && (display2[0] >= 60))
-            {
-                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-                display5 = <p> Your maximum heart rate is greater than 160 bpm (beats per minute), the maximum healthy limit in your case </p>
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
-            }
-            else if (display2[3] > 155 && (display2[0] >= 65))
-            {
-                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-                display5 = <p> Your maximum heart rate is greater than 155 bpm (beats per minute), the maximum healthy limit in your case </p>
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
-            }
-            else if (display2[3] > 150 && (display2[0] >= 70))
-            {
-                mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
-                display5 = <p> Your maximum heart rate is greater than 150 bpm (beats per minute), the maximum healthy limit in your case </p>
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
-            }
-
+    
+        
+    
         if(display2[6] < 60 || display2[6]> 100)
         {
             impulseLevel = <p style={{ color: 'red' }}>impulse level: {display2[6]}</p>
