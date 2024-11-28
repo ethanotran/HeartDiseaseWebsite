@@ -4,7 +4,8 @@ export const data = [
     question: "Please input your age in the box below:",
     type: "number",
     upper: 110,
-    lower: 0
+    lower: 0,
+    tooltip: ""
   },
 
   {
@@ -30,7 +31,8 @@ export const data = [
     value1: 0,
     value2: 1,
     value3: 2,
-    value4: 3
+    value4: 3,
+    tooltip: "Angina is a fancy term for chest pain"
   },
 
   {
@@ -38,7 +40,8 @@ export const data = [
     question: "What is your maximum heart rate?",
     type: "number",
     upper: 220,
-    lower: 0
+    lower: 0,
+    tooltip: "Maximum heart rate refers to your peak heart rate when active"
   },
 
   {
@@ -52,7 +55,8 @@ export const data = [
     value1: 1,
     value2: 0,
     value3: null,
-    value4: null
+    value4: null,
+    tooltip: "Exercised induced angina refers to having chest discomfort such as pain, pressure, or tightness when"
   },
 
   {
@@ -65,7 +69,8 @@ export const data = [
     value1: 0,
     value2: 1,
     value3: 2,
-    value4: 3
+    value4: 3,
+    tooltip: ""
   },
 
   {
@@ -74,6 +79,7 @@ export const data = [
     type: "number",
     upper: 120,
     lower: 30,
+    tooltip: "Resting heart rate"
   },
 
   {
@@ -82,6 +88,7 @@ export const data = [
     type: "number",
     upper: 250,
     lower: 70,
+    tooltip: "Resting heart rate"
   },
 
   {
@@ -90,6 +97,7 @@ export const data = [
     type: "number",
     upper: 300,
     lower: 0,
+    tooltip: "Ck-MB is ..."
   },
 
   {
@@ -97,6 +105,7 @@ export const data = [
     question: "What is your troponin level? (Troponin appears in the blood stream when the heart has been damaged, indicating previous damage to the heart)",
     type: "number",
     upper: 15,
-    lower: 0
+    lower: 0,
+    tooltip: ""
   },
 ]
