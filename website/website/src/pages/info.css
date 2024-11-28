@@ -2,12 +2,13 @@
 .page-header{
 
   font-family: "Arial";
-  font-size: 50px;
+  font-size: 35px;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   text-align: center;
   padding-top: 15%;
   padding-bottom: 10%;
+  
 }
 
 .titles
