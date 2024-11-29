@@ -1,6 +1,22 @@
 import NavBar from "../components/navbar";
 import "./info.css"
 
+/*Sources for info:
+
+https://www.who.int/health-topics/cardiovascular-diseases#tab=tab_1
+
+https://www.cdc.gov/heart-disease/about/index.html#:~:text=is%20heart%20disease%3F-,The%20term%20"heart%20disease"%20refers%20to%20several%20types%20of%20heart,can%20cause%20a%20heart%20attack.
+
+https://www.mayoclinic.org/diseases-conditions/heart-disease/symptoms-causes/syc-20353118
+
+https://www.escardio.org/The-ESC/Press-Office/Press-releases/what-should-i-eat-to-avoid-heart-disease
+
+https://www.cdc.gov/heart-disease/prevention/
+
+https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/heart-disease-stroke#:~:text=Having%20diabetes%20means%20you%20are,heart%20attack%20or%20a%20stroke.
+
+https://www.nhs.uk/conditions/coronary-heart-disease/prevention/
+*/ 
 export default function Info() {
   return(
     <div>
@@ -22,7 +38,7 @@ export default function Info() {
           CVDs take the lives of more than 17 million people around the world each year.</p>
     
 
-          <h2 className="titles">Which are the General Symptoms ?</h2>
+          <h2 className="titles">Which are the General Symptoms?</h2>
         
         <p>Symptoms vary depending on the heart disease. 
           However, the most common symptoms generally include chest pain, shortness in breath, pain in arms/shoulders, weakness and fatigue. 
