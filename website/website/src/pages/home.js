@@ -54,7 +54,7 @@ export default function Home() {
         <p>Around 800,000 Americans suffer from a heart attack each year. worldwide more than 17 million people die from a cardiovascular disease each year. </p>
         </div>
 
-        <button className="more" onClick = {()=> buttonNav("/stats")}>more</button>
+        <button className="more" onClick = {()=> buttonNav("/info")}>more</button>
       </div>
       
 
