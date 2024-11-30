@@ -1,5 +1,10 @@
 import NavBar from "../components/navbar";
+import React from "react";
 import "./model.css"
+import Image1 from "../components/MLPipelines.png"
+import Image2 from "../components/pipeline1.png"
+import Image3 from "../components/pipeline2.png"
+
 
 
 export default function Model() {
@@ -13,15 +18,15 @@ export default function Model() {
       
       <div className="body">
         <figure>
-          <img src = "../components/MLpipelines.png" width= "500" height = "500"></img>
+          <img src = {Image1} alt="from kaggle project" width= "500" height = "500"></img>
           <figcaption> Diagram of our machine learning pipelines</figcaption>
         </figure>
         <figure className="pipeline">
-          <img src = "../components/pipeline1.png" width = "500" height = "500"></img>
+          <img src ={Image2} alt="from kaggle project" width = "500" height = "500"></img>
           <figcaption>Accuracy scores of our first pipeline</figcaption>
         </figure>
         <figure className="pipeline">
-          <img src = "../components/pipeline2.png" width = "500" height = "500"></img>
+          <img src = {Image3} alt="from kaggle project" width = "500" height = "500"></img>
           <figcaption>Accuracy scores of our second pipeline</figcaption>
         </figure>
       </div>
