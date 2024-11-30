@@ -91,13 +91,7 @@ export default function Info() {
            It is important to be aware of your health and check on your medication even more if your conditions have a relation with heart disease. For example,
             diabetes is a factor that increases the risk of heart disease so it is important to keep your diabetes medication in check and have regular check-ups with a physician. 
         </p>
-        </div>
-        </div>
-
-    </div>
-      </div>
-      <div className="statistics">
-        <h2> General Statistics</h2>
+        <h2 className="titles"> General Statistics</h2>
           <p>Heart disease is the leading cause of death worldwide, accounting for 17.9 million deaths per year, or 32% of all global deaths. Of these deaths: </p>
           <ul>
             <li>Over 75% occur in low and middle-income countries</li>
@@ -109,9 +103,8 @@ export default function Info() {
             <li>In 2022, heart disease caused 702,880 deaths, or 20% of all deaths</li>
             <li>Between 2019 and 2020, heart disease cost $252.2 billion in healthcare services, medications, and lost productivity.</li>
           </ul>
-      </div>
-      <div className="feature-impact">
-        <h2>How do our model features affect the likelihood of heart disease?</h2>
+
+          <h2  className="titles">How do our model features affect the likelihood of heart disease?</h2>
         <ul>
           <li><strong>Age:</strong> The risk of heart disease is positively correlated with age. In the United States, 11% of people between 20 and 40 have heart disease, 37% between 40 and 60, 71% between 60 and 80, and 85% over 80.</li>
           <li><strong>Sex:</strong> Men generally have higher risk of heart disease than women, though the risk becomes similar post-menopause.</li>
@@ -123,18 +116,34 @@ export default function Info() {
           <li><strong>Creatine Kinase-MB Level:</strong> CK-MB is an enzyme found in the heart. Elevated levels indicate damage, commonly due to a heart attack.</li>
           <li><strong>Troponin Level:</strong> Troponins are proteins released into the bloodstream when the heart is damaged. High levels are a specific marker for heart attacks.</li>
         </ul>
-      </div>
-      <div className="sources">
-        <h2>Sources</h2>
+        <h2 className="titles">Sources</h2>
         <ul>
-          <li>https://www.cdc.gov/heart-disease/data-research/facts-stats/index.html</li>
-          <li>https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)</li>
-          <li>https://pmc.ncbi.nlm.nih.gov/articles/PMC5408511</li>
-          <li>https://web.archive.org/web/20120510135600/http://www.world-heart-federation.org/cardiovascular-health/cardiovascular-disease-risk-factors/</li>
-          <li>https://web.archive.org/web/20140817123106/http://whqlibdoc.who.int/publications/2011/9789241564373_eng.pdf?ua=1</li>
+        
+          <li > <a href= "https://www.cdc.gov/heart-disease/data-research/facts-stats/index.html"> https://www.cdc.gov/heart-disease/data-research/facts-stats/index.html </a>  </li>
+          <li><a href="https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)">https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)</a></li>
+          <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5408511">https://pmc.ncbi.nlm.nih.gov/articles/PMC5408511</a></li>
+          
+          <li><a href="https://web.archive.org/web/20120510135600/http://www.world-heart-federation.org/cardiovascular-health/cardiovascular-disease-risk-factors/">https://web.archive.org/web/20120510135600/http://www.world-heart-federation.org/cardiovascular-health/cardiovascular-disease-risk-factors/</a></li>
+          <li><a href="https://web.archive.org/web/20140817123106/http://whqlibdoc.who.int/publications/2011/9789241564373_eng.pdf?ua=1">https://web.archive.org/web/20140817123106/http://whqlibdoc.who.int/publications/2011/9789241564373_eng.pdf?ua=1</a></li>
+          <li><a href="https://www.who.int/health-topics/cardiovascular-diseases#tab=tab_1">https://www.who.int/health-topics/cardiovascular-diseases#tab=tab_1</a></li>
+
+          <li><a href='https://www.cdc.gov/heart-disease/about/index.html#:~:text=is%20heart%20disease%3F-,The%20term%20"heart%20disease"%20refers%20to%20several%20types%20of%20heart,can%20cause%20a%20heart%20attack.'>https://www.cdc.gov/heart-disease/about/index.html#:~:text=is%20heart%20disease%3F-,The%20term%20"heart%20disease"%20refers%20to%20several%20types%20of%20heart,can%20cause%20a%20heart%20attack.</a></li>
+          <li><a href="https://www.cdc.gov/heart-disease/prevention/">https://www.cdc.gov/heart-disease/prevention/</a></li>
+          <li><a href="https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/heart-disease-stroke#:~:text=Having%20diabetes%20means%20you%20are,heart%20attack%20or%20a%20stroke.">https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/heart-disease-stroke#:~:text=Having%20diabetes%20means%20you%20are,heart%20attack%20or%20a%20stroke.</a></li>
+          <li><a href="https://www.nhs.uk/conditions/coronary-heart-disease/prevention/">https://www.nhs.uk/conditions/coronary-heart-disease/prevention/</a></li>
         </ul>
-      </div>
-    </div> 
-  </div>
+        
+        
+        </div>
+        </div>
+
+     
+
+    </div>
+  
+      
+    
+
+ 
   )
 }
