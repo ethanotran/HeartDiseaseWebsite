@@ -11,11 +11,11 @@
   
   .titles2
   {
-   font-family: Arial;
-   font-size: 35px;
-   text-align: center;
-   padding-top: 5%;
-   padding-bottom: 1%;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    font-size: 24px;
+    margin: 32px;
   }
   
   .body-color2{
@@ -50,13 +50,32 @@
   
   .body
   {
-    font-family: Arial;
     font-size: 20px;
+    font-family: "Arial";
     color: rgb(0, 0, 0);
-    text-align: center;
-
+    text-align: justify;
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  
   }
 
+  .body .ul, .p {
+    text-align: left;
+    font-size: 25px;
+    font-family: "Arial";
+    margin-left: 64px;
+    margin-right: 64px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .body .li {
+    margin-bottom: 20px;
+    
+  }
+  
 
 .pipeline
 {
