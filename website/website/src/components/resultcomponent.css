@@ -2,7 +2,7 @@
   
     font-family: "Arial";
     font-size: x-large;
-    transform: translateY(100px);
+    transform: translateY(-50px);
     background-color: rgb(29, 29, 29);
     color: rgb(243, 243, 243);
     transform: translateY(-100px);
@@ -13,10 +13,17 @@
 }
 .results .summary {
 
-    font-size: medium;
-    color: rgb(255, 255, 255);
+    font-size: 13px;
+    color: rgb(38, 184, 55);
     text-align: left;
-    transform: translate(500px,50px);
+    transform: translate(200px,60px);
     
 
+}
+.results .normal-ranges
+{
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    transform: translate(590px,-251px);
 }

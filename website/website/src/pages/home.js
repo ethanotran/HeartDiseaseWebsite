@@ -47,12 +47,14 @@ export default function Home() {
 
       <div  className='statistics'>
         <img src="https://assets.cdn.thewebconsole.com/ZWEB8327/images/5a723d5c93c90.jpg?m=c1e65a48bd99d67047ea4ac22b5b16a3" alt="From livewellhc.ca" width="800px" height ="500px"></img>
-        <h2>Heart Disease Statistics</h2>
+       
+       
         <div className="bodytext">
-          <p>Around 800,000 Americans suffer from a heart attack each year. worldwide more than 17 million people die from a cardiovascular disease each year. </p>
+        <h2>Heart Disease Statistics</h2>
+        <p>Around 800,000 Americans suffer from a heart attack each year. worldwide more than 17 million people die from a cardiovascular disease each year. </p>
         </div>
 
-        <button className="more" onClick = {()=> buttonNav("/stats")}>more</button>
+        <button className="more" onClick = {()=> buttonNav("/info")}>more</button>
       </div>
       
 
