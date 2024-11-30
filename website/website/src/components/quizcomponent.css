@@ -79,6 +79,26 @@
   cursor: pointer;
 }
 
+.container .tooltip-container{
+  position: relative;
+  display: inline-block;
+  border: red;
+  padding-left: 15px;
+}
+
+.container .tooltip {
+  position: absolute;
+  top: calc(-100% + 50px);
+  transform: translate(20%);
+  background-color: rgb(97, 197, 176);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1;
+  min-width: 0px;
+  font-size: 20px;
+}
+
 .container .index{
   margin: auto;
   font-size: 25px;
