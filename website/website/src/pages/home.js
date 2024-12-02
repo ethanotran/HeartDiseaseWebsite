@@ -23,7 +23,7 @@ export default function Home() {
         </div>
         
         <div className='body'>
-          <p>with our machine learning model, you take a survey and it will predict if you are likely to develop a heart disease. You can also find important information about heart health and diseases.</p>
+          <p>With our machine learning model, you take a survey and it will predict if you are likely to develop a heart disease. You can also find important information about heart health and diseases.</p>
         </div>
         <button className='quiz-button-main' onClick={()=> buttonNav("/quizentry")}>Begin Quiz</button>
       </div>
@@ -35,7 +35,7 @@ export default function Home() {
         <div className="bodytext">
           
             <p>
-            A heart disease is any kind of disease that affects the health of the heart. the most common heart disease in the US is the coronary Artery Disease or CAD which affects 1 of every 20 adults of age 20 or older. 
+            A heart disease is any kind of disease that affects the health of the heart. The most common heart disease in the US is the coronary Artery Disease or CAD which affects 1 of every 20 adults of age 20 or older. 
             </p>
           
           <button className='more' onClick = {()=> buttonNav("/info")}>more</button>
