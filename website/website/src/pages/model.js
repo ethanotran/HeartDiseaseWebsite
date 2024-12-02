@@ -15,7 +15,9 @@ export default function Model() {
        
       <div className="body">
       <h1 className="titles2"><b>Approach</b></h1>
+
       <p>To develop our machine learning models, we took two datasets and performed basic cleaning tasks like checking for blank or missing values or removing duplicate ones. We also generated visualizations of the data using a heatmap to determine which variables were most correlated to incidence of heart disease, as well as a box plot to see how the data is distributed. We then generated models from the dataset, using 15% of the data for the testing and the remaining 85% for training the model. After outputting the accuracy scores for the models, we implemented them into the backend and generated a voting classifier to take the combined results of the best performing models. In doing so, we would ensure robust prediction, regardless of complexity or distribution of the data.</p>
+
       </div>
       <div className="information2">
         <figure>

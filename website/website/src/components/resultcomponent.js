@@ -51,7 +51,9 @@ const ResultsComponent = () => {
     let display9;
     if(location.state.result[0] == 0&&location.state.result[1] == 0)
     {
-        display = <p>No risk of heart disease detected. The inputs you entered are within the healthy ranges</p>
+
+        display = <p>No risk of heart disease detected; the inputs you entered are within the healthy ranges</p>
+
     }
     else if((location.state.result[0] == 1&&location.state.result[1] == 0)||(location.state.result[0] == 0&&location.state.result[1] == 1))
     {
