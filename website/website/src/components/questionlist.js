@@ -41,7 +41,7 @@ export const data = [
     type: "number",
     upper: 220,
     lower: 0,
-    tooltip: "Maximum heart rate refers to your peak heart rate when active"
+    tooltip: "Maximum heart rate refers to your peak heart rate in beats per minute while active"
   },
 
   {
@@ -56,7 +56,7 @@ export const data = [
     value2: 0,
     value3: null,
     value4: null,
-    tooltip: "Exercised induced angina refers to having chest discomfort such as pain, pressure, or tightness when"
+    tooltip: "Exercised induced angina refers to having chest discomfort such as pain, pressure, or tightness when exercising"
   },
 
   {
@@ -75,20 +75,20 @@ export const data = [
 
   {
     questionType: "input",
-    question: "What is your impulse level? (Impulse refers to the number of times your heart beats per minute, usually within 60-100 times for the average adult)",
+    question: "What is your resting heart rate?",
     type: "number",
     upper: 120,
     lower: 30,
-    tooltip: "Resting heart rate"
+    tooltip: "Resting heart rate is the number of times your heart beats per minute while at rest"
   },
 
   {
     questionType: "input",
-    question: "What is your systolic blood pressure? (Top number)",
+    question: "What is your systolic blood pressure?",
     type: "number",
     upper: 250,
     lower: 70,
-    tooltip: "Resting heart rate"
+    tooltip: "This is also known as the top number"
   },
 
   {
@@ -97,15 +97,15 @@ export const data = [
     type: "number",
     upper: 300,
     lower: 0,
-    tooltip: "Ck-MB is ..."
+    tooltip: "CK-MB is an enzyme that is released into the bloodstream when heart muscle cells are damaged"
   },
 
   {
     questionType: "input",
-    question: "What is your troponin level? (Troponin appears in the blood stream when the heart has been damaged, indicating previous damage to the heart)",
+    question: "What is your troponin level? ",
     type: "number",
     upper: 15,
     lower: 0,
-    tooltip: ""
-  },
+    tooltip: "Troponin is a protein found in heart and muscle cells. It is released into the blood stream when heart muscle cells are damaged"
+  }
 ]
