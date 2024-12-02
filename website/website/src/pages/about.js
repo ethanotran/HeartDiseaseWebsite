@@ -9,8 +9,7 @@ export default function About() {
       <NavBar/>
       <h1 className="page-header3">About Us</h1>
       <div className="body-text3">
-      <p >Alex Tran is a computer science student at the University of Florida, and has worked part time as a web developer at a small company focused on marine life conservation. 
-        His personal interests include reading, playing tennis, and operating systems, especially Linux.</p>
+      <p >Alex Tran is a computer science student at the University of Florida, and has worked part time as a web developer at a small company focused on marine life conservation. After graduation, he hopes to find work as a software or data engineer. His personal interests include reading, playing tennis, and operating systems, especially Linux.</p>
         <p> Nicholas Tran is a fourth-year computer science student at the University Florida, and has also worked part time as a project manager and web development for Ocean Observation Group. 
           After graduating this winter, he hopes to get a new job in entry-level software engineering or development. His interests include reading, swimming, and boxing. 
         </p>
