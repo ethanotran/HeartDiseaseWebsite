@@ -116,62 +116,62 @@ const ResultsComponent = () => {
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
             display5 = <p> Your maximum heart rate is less than 178 bpm (beats per minute), the minimum healthy limit in your case </p>
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
         }
         else if (display2[3] < 168 && (display2[0] >= 30))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
             display5 = <p> Your maximum heart rate is less than 168 bpm (beats per minute), the minimum healthy limit in your case </p>
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
 
         }
         else if (display2[3] < 163 && (display2[0] >= 35))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
             display5 = <p> Your maximum heart rate is less than 163 bpm (beats per minute), the minimum healthy limit in your case </p> 
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
         }
         else if (display2[3] < 158 && (display2[0] >= 40))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
             display5 = <p> Your maximum heart rate is less than 158 bpm (beats per minute), the minimum healthy limit in your case </p>
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p> 
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p> 
         }
         else if (display2[3] < 153 && (display2[0] >= 45))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
             display5 = <p> Your maximum heart rate is less than 153 bpm (beats per minute), the minimum healthy limit in your case </p> 
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
         }
         else if (display2[3] < 148 && (display2[0] >= 50))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
             display5 = <p> Your maximum heart rate is less than 148 bpm (beats per minute), the minimum healthy limit in your case </p> 
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
         }
         else if (display2[3] < 143 && (display2[0] >= 55))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
             display5 = <p> Your maximum heart rate is less than 143 bpm (beats per minute), the minimum healthy limit in your case </p>
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p> 
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p> 
         }
         else if (display2[3] < 138 && (display2[0] >= 60))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
             display5 = <p> Your maximum heart rate is less than 138 bpm (beats per minute), the minimum healthy limit in your case </p> 
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
         }
         else if (display2[3] < 133 && (display2[0] >= 65))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
             display5 = <p> Your maximum heart rate is less than 133 bpm (beats per minute), the minimum healthy limit in your case </p>  
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
         }
         else if (display2[3] < 128 && (display2[0] >= 70))
         {
             mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
             display5 = <p> Your maximum heart rate is less than 150 bpm (beats per minute), the minimum healthy limit in your case </p>  
-            display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+            display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
         }
 
     
@@ -186,13 +186,13 @@ const ResultsComponent = () => {
             if(display2[6] < 60)
             { 
                  display6 = <p> Your resting heart rate is less than the healthy range, 60-100 bpm (beats per minute) </p>
-                 display11 = <p> To learn more about resting heart rate, click here: https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you</p>
+                 display11 = <p> To learn more about resting heart rate, click here:<a href='https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you'> https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you</a></p>
             } 
     
             else if(display2[6] > 100) 
             {
                 display6 = <p> Your resting heart rate is greater than the healthy range, 60-100 bpm (beats per minute)</p>
-                display11 = <p> To learn more about resting heart rate, click here: https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you</p>
+                display11 = <p> To learn more about resting heart rate, click here:<a href='https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you'> https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you</a></p>
             }
             
         }
@@ -204,13 +204,13 @@ const ResultsComponent = () => {
             if(display2[7] < 90)
             { 
                 display7 = <p> Your systolic blood pressure is less than the healthy range, 90-120 mm Hg (millimeters of mercury) </p>
-                display12 = <p> To learn more about systolic blood pressure, click here: https://www.nhlbi.nih.gov/health/high-blood-pressure</p>
+                display12 = <p> To learn more about systolic blood pressure, click here:<a href='https://www.nhlbi.nih.gov/health/high-blood-pressure'> https://www.nhlbi.nih.gov/health/high-blood-pressure</a></p>
             } 
         
             else if(display2[7] > 120) 
             {
                 display7 = <p> Your systolic blood pressure is greater than the healthy range, 90-120 mm Hg (millimeters of mercury)</p>
-                display12 = <p> To learn more about systolic blood pressure, click here: https://www.nhlbi.nih.gov/health/high-blood-pressure</p>
+                display12 = <p> To learn more about systolic blood pressure, click here:<a href='https://www.nhlbi.nih.gov/health/high-blood-pressure'> https://www.nhlbi.nih.gov/health/high-blood-pressure</a></p>
             }
         }
 
@@ -220,20 +220,20 @@ const ResultsComponent = () => {
             if(display2[8] < 5)
             { 
                 display8 = <p> Your (CK-MB) level is less than the healthy range, 5-25 IU/L (international units per liter) </p>
-                display13 = <p> To learn more about (CK-MB) level, click here: https://www.ncbi.nlm.nih.gov/books/NBK352/</p>
+                display13 = <p> To learn more about (CK-MB) level, click here:<a href='https://www.ncbi.nlm.nih.gov/books/NBK352/'>https://www.ncbi.nlm.nih.gov/books/NBK352/</a></p>
             } 
             
             else if(display2[8] > 25) 
             {
                 display8 = <p> Your (CK-B) is greater than the healthy range, 5-25 IU/L (international units per liter) </p>
-                display13 = <p> To learn more about (CK-MB) level, click here: https://www.ncbi.nlm.nih.gov/books/NBK352/</p>
+               display13 = <p> To learn more about (CK-MB) level, click here:<a href='https://www.ncbi.nlm.nih.gov/books/NBK352/'>https://www.ncbi.nlm.nih.gov/books/NBK352/</a></p>
             }
         }
         if(display2[9] >= 0.04)
         {
             tL = <p style={{ color: 'red' }}> troponin level: {display2[9]}</p> 
             display9 = <p> Your troponin level is greater than the healthy limit, which is less than 0.04 ng/mL (nanograms/millileter) </p>
-            display14 = <p> To learn more about troponin levels, click here: https://my.clevelandclinic.org/health/diagnostics/22770-troponin-test</p>
+            display14 = <p> To learn more about troponin levels, click here:<a href='https://my.clevelandclinic.org/health/diagnostics/22770-troponin-test'>https://my.clevelandclinic.org/health/diagnostics/22770-troponin-test</a></p>
 
         }
         display4 = <p> Due to one or more inputs being outside the healthy range, professional consultation is recommended </p>
@@ -302,62 +302,62 @@ const ResultsComponent = () => {
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
                 display5 = <p> Your maximum heart rate is less than 178 bpm (beats per minute), the minimum healthy limit in your case </p>
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
             }
             else if (display2[3] < 168 && (display2[0] >= 30))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
                 display5 = <p> Your maximum heart rate is less than 168 bpm (beats per minute), the minimum healthy limit in your case </p>
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
     
             }
             else if (display2[3] < 163 && (display2[0] >= 35))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
                 display5 = <p> Your maximum heart rate is less than 163 bpm (beats per minute), the minimum healthy limit in your case </p> 
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
             }
             else if (display2[3] < 158 && (display2[0] >= 40))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
                 display5 = <p> Your maximum heart rate is less than 158 bpm (beats per minute), the minimum healthy limit in your case </p>
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p> 
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p> 
             }
             else if (display2[3] < 153 && (display2[0] >= 45))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
                 display5 = <p> Your maximum heart rate is less than 153 bpm (beats per minute), the minimum healthy limit in your case </p> 
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
             }
             else if (display2[3] < 148 && (display2[0] >= 50))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
                 display5 = <p> Your maximum heart rate is less than 148 bpm (beats per minute), the minimum healthy limit in your case </p> 
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
             }
             else if (display2[3] < 143 && (display2[0] >= 55))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
                 display5 = <p> Your maximum heart rate is less than 143 bpm (beats per minute), the minimum healthy limit in your case </p>
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p> 
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p> 
             }
             else if (display2[3] < 138 && (display2[0] >= 60))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p> 
                 display5 = <p> Your maximum heart rate is less than 138 bpm (beats per minute), the minimum healthy limit in your case </p> 
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
             }
             else if (display2[3] < 133 && (display2[0] >= 65))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
                 display5 = <p> Your maximum heart rate is less than 133 bpm (beats per minute), the minimum healthy limit in your case </p>  
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
             }
             else if (display2[3] < 128 && (display2[0] >= 70))
             {
                 mhr =   <p style={{ color: 'red' }}> maximum heart rate: {display2[3]}</p>
                 display5 = <p> Your maximum heart rate is less than 150 bpm (beats per minute), the minimum healthy limit in your case </p>  
-                display1 = <p> Here is more information on maximum heart rate: https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </p>
+                display1 = <p> Here is more information on maximum heart rate: <a href='https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate'>https://www.hopkinsmedicine.org/health/wellness-and-prevention/understanding-your-target-heart-rate </a> </p>
             }
     
         
@@ -368,13 +368,13 @@ const ResultsComponent = () => {
             if(display2[6] < 60)
             { 
                 display6 = <p> Your resting heart rate is less than the healthy range, 60-100 bpm (beats per minute) </p>
-                display11 = <p> To learn more about resting heart rate, click here: https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you</p>
+                display11 = <p> To learn more about resting heart rate, click here:<a href='https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you'> https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you</a></p>
             } 
         
             else if(display2[6] > 100) 
             {
                 display6 = <p> Your resting heart rate is greater than the healthy range, 60-100 bpm (beats per minute) </p>
-                display11 = <p> To learn more about resting heart rate, click here: https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you</p>
+                display11 = <p> To learn more about resting heart rate, click here:<a href='https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you'> https://www.health.harvard.edu/heart-health/what-your-heart-rate-is-telling-you</a></p>
             }
                 
         }
@@ -385,14 +385,14 @@ const ResultsComponent = () => {
             if(display2[7] < 90)
             { 
                 display7 = <p> Your systolic blood pressure is less than the healthy range, 90-120 mm Hg (millimeters of mercury) </p>
-                display12 = <p> To learn more about systolic blood pressure, click here: https://www.nhlbi.nih.gov/health/high-blood-pressure</p>
+                display12 = <p> To learn more about systolic blood pressure, click here:<a href='https://www.nhlbi.nih.gov/health/high-blood-pressure'> https://www.nhlbi.nih.gov/health/high-blood-pressure</a></p>
             
             } 
             
             else if(display2[7] > 120) 
             {
                 display7 = <p> Your systolic blood pressure is greater than the healthy range, 90-120 mm Hg (millimeters of mercury)</p>
-                display12 = <p> To learn more about systolic blood pressure, click here: https://www.nhlbi.nih.gov/health/high-blood-pressure</p>
+                display12 = <p> To learn more about systolic blood pressure, click here:<a href='https://www.nhlbi.nih.gov/health/high-blood-pressure'> https://www.nhlbi.nih.gov/health/high-blood-pressure</a></p>
             }
         }
 
@@ -402,20 +402,20 @@ const ResultsComponent = () => {
             if(display2[8] < 5)
             { 
                 display8 = <p> Your (CK-MB) level is less than the healthy range, 5-25 IU/L (international units per liter) </p>
-                display13 = <p> To learn more about (CK-MB) level, click here: https://www.ncbi.nlm.nih.gov/books/NBK352/</p>
+               display13 = <p> To learn more about (CK-MB) level, click here:<a href='https://www.ncbi.nlm.nih.gov/books/NBK352/'>https://www.ncbi.nlm.nih.gov/books/NBK352/</a></p>
             } 
                 
             else if(display2[8] > 25) 
             {
                 display8 = <p> Your (CK-MB) level is greater than the healthy range, 5-25 IU/L (international units per liter) </p>
-                display13 = <p> To learn more about (CK-MB) level, click here: https://www.ncbi.nlm.nih.gov/books/NBK352/</p>
+               display13 = <p> To learn more about (CK-MB) level, click here:<a href='https://www.ncbi.nlm.nih.gov/books/NBK352/'>https://www.ncbi.nlm.nih.gov/books/NBK352/</a></p>
             } 
         }
         if(display2[9] >= 0.04)
         {
             tL = <p style={{ color: 'red' }}> troponin level: {display2[9]}</p> 
             display9 = <p> Your troponin level is greater than the healthy limit, which is less than 0.04 ng/mL (nanograms/millileter) </p>
-            display14 = <p> To learn more about troponin levels, click here: https://my.clevelandclinic.org/health/diagnostics/22770-troponin-test</p>
+            display14 = <p> To learn more about troponin levels, click here:<a href='https://my.clevelandclinic.org/health/diagnostics/22770-troponin-test'> https://my.clevelandclinic.org/health/diagnostics/22770-troponin-test</a></p>
         }
         display4 = <p> Due to one or more inputs being outside the healthy range, professional consultation is strongly recommended. </p>
 
